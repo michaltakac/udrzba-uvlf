@@ -1,0 +1,92 @@
+<template name="poziadavkaOprava">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="form-title">Pridať požiadavku</h3>
+        {{#autoForm id="ziadanka" schema=Schemas.Ziadanky collection=Collections.Ziadanky class="form-horizontal"}}
+
+        {{> afFieldInput name='cislo' value=cislo type="hidden"}}
+        {{> afFieldInput name='createdAt' value=datum type="hidden"}}
+
+          <!-- Ziadatel -->
+          <div class="form-group {{#if afFieldIsInvalid name='ziadatel'}}has-error{{/if}}">
+            <label class="col-sm-3 control-label">{{afFieldLabelText name='ziadatel'}}</label>
+            <div class="col-sm-9">
+              {{> afFieldInput name='ziadatel'}}
+              {{#if afFieldIsInvalid name='ziadatel'}}
+              <span class="help-block">{{{afFieldMessage name='ziadatel'}}}</span>
+              {{/if}}
+            </div>
+          </div>
+
+          {{#if ziadatelInfo}}
+            {{#with ziadatelInfo}}
+            <!-- Utvar -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Útvar/katedra/klinika</label>
+              <div class="col-sm-9">
+                {{utvar}}
+              </div>
+            </div>
+            <!-- Pracovisko -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Pracovisko</label>
+              <div class="col-sm-9">
+                {{pracovisko}}
+              </div>
+            </div>
+            <!-- Referat -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Referát</label>
+              <div class="col-sm-9">
+                {{referat}}
+              </div>
+            </div>
+            {{> afFieldInput name='ziadatelInfo.0.utvar' value=utvar type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.pracovisko' value=pracovisko type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.referat' value=referat type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.titulPred' value=titulPred type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.meno' value=meno type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.priezvisko' value=priezvisko type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.titulZa' value=titulZa type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.email' value=email type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.telefon' value=telefon type="hidden"}}
+            {{> afFieldInput name='ziadatelInfo.0.klapka' value=klapka type="hidden"}}
+
+            {{/with}}
+          {{/if}}
+
+          <!-- Miesto -->
+          <div class="form-group {{#if afFieldIsInvalid name='miesto'}}has-error{{/if}}">
+            <label class="col-sm-3 control-label">{{afFieldLabelText name='miesto'}}</label>
+            <div class="col-sm-9">
+              {{> afFieldInput name='miesto'}}
+              {{#if afFieldIsInvalid name='miesto'}}
+              <span class="help-block">{{{afFieldMessage name='miesto'}}}</span>
+              {{/if}}
+            </div>
+          </div>
+
+          <!-- Sprava -->
+          <div class="form-group {{#if afFieldIsInvalid name='sprava'}}has-error{{/if}}">
+            <label class="col-sm-3 control-label">{{afFieldLabelText name='sprava'}}</label>
+            <div class="col-sm-9">
+              {{> afFieldInput name='sprava'}}
+              {{#if afFieldIsInvalid name='sprava'}}
+              <span class="help-block">{{{afFieldMessage name='sprava'}}}</span>
+              {{/if}}
+            </div>
+          </div>
+          {{> afFieldInput name='typ' value="Oprava" type="hidden"}}
+
+          <button type="submit" class="btn btn-success pull-right">Odoslať požiadavku</button>
+        {{/autoForm}}
+      
+      </div>
+    </div>
+
+    <hr>
+    
+  </div>
+</template>

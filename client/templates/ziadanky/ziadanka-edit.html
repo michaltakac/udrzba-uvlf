@@ -1,0 +1,157 @@
+<template name="ziadankaEdit">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="form-title">Žiadanka č.: {{this.cislo}} - {{this.typ}}</h3>
+        {{#autoForm id="ziadanka" type="update" doc=this schema=Schemas.Ziadanky collection=Collections.Ziadanky class="form-horizontal" }}
+
+        {{> afFieldInput name='cislo' type="hidden"}}
+        {{> afFieldInput name='createdAt' type="hidden"}}
+        {{> afFieldInput name='ziadatel' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.utvar' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.pracovisko' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.referat' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.titulPred' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.meno' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.priezvisko' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.titulZa' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.email' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.telefon' type="hidden"}}
+        {{> afFieldInput name='ziadatelInfo.0.klapka' type="hidden"}}
+        {{> afFieldInput name='typ' type="hidden"}}
+
+        <!-- Kontakt -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Kontakt</label>
+          <div class="col-sm-9">
+            <span style="color: #072384;">{{ziadatelInfo.titulPred}} {{ziadatelInfo.meno}} {{ziadatelInfo.priezvisko}}, {{ziadatelInfo.titulZa}}</span>
+          </div>
+        </div>
+        <!-- Utvar -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Útvar/katedra/klinika</label>
+          <div class="col-sm-9">
+            {{ziadatelInfo.utvar}}
+          </div>
+        </div>
+        <!-- Pracovisko -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Pracovisko</label>
+          <div class="col-sm-9">
+            {{ziadatelInfo.pracovisko}}
+          </div>
+        </div>
+        <!-- Referat -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Referát</label>
+          <div class="col-sm-9">
+            {{ziadatelInfo.referat}}
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9">
+            <a href="mailto:{{ziadatelInfo.email}}">{{ziadatelInfo.email}}</a>
+          </div>
+        </div>
+        <!-- Telefon -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Telefón</label>
+          <div class="col-sm-9">
+            <i>{{ziadatelInfo.telefon}}</i>
+          </div>
+        </div>
+        <!-- Klapka -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Klapka</label>
+          <div class="col-sm-9">
+            <i>{{ziadatelInfo.klapka}}</i>
+          </div>
+        </div>
+
+        <!-- Miesto problemu -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Miesto</label>
+          <div class="col-sm-9">
+            {{> afFieldInput name='miesto' value=this.miesto type="hidden"}}
+          </div>
+        </div>
+        <!-- Predmet požiadavky -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Predmet požiadavky</label>
+          <div class="col-sm-9">
+            {{> afFieldInput name='sprava' value=this.sprava type="hidden"}} 
+          </div>
+        </div>
+        <!-- Dátum vystavenia -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Dátum vystavenia</label>
+          <div class="col-sm-9">
+            {{this.createdAt}}
+          </div>
+        </div>
+
+        <!-- Termín začatia prác -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">{{afFieldLabelText name='zacatiePrac'}}</label>
+          <div class="input-group col-sm-9">
+            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            {{> afFieldInput name='zacatiePrac' type="bootstrap-datepicker" placeholder="Kliknite pre výber dátumu"}}
+          </div>
+        </div>
+        <!-- Termín ukončenia prác -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">{{afFieldLabelText name='ukonceniePrac' placeholder="Kliknite pre výber dátumu"}}</label>
+          <div class="input-group col-sm-9">
+            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            {{> afFieldInput name='ukonceniePrac' type="bootstrap-datepicker" placeholder="Kliknite pre výber dátumu"}}
+          </div>
+        </div>
+        <!-- Súpis dodávok -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">{{afFieldLabelText name='supisDodavok'}}</label>
+          <div class="col-sm-9">
+            {{> afFieldInput name='supisDodavok'}}
+          </div>
+        </div>
+        <!-- Priorita -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">{{afFieldLabelText name='priorita'}}</label>
+          <div class="col-sm-9">
+            {{> afFieldInput name='priorita'}}
+          </div>
+        </div>
+        <!-- Prideleny pracovnik -->
+        <div class="form-group">
+          <label class="col-sm-3 control-label">{{afFieldLabelText name='pridelenyPracovnik'}}</label>
+          <div class="col-sm-9">
+            {{> afFieldInput name='pridelenyPracovnik'}}
+          </div>
+        </div>
+        <hr>
+        {{#if equals this.status "TRUE"}}
+          <h3>Táto požiadavka bola vybavená!</h3>
+        {{else}}
+          <h3>Zaškrtnite, ak považujete požiadavku za vybavenú:</h3>
+        <!-- Status -->
+        <div class="form-group">
+          <div class="col-sm-9 pull-right">
+            {{> afFieldInput name='status' type="boolean-checkbox"}}
+          </div>
+        </div>
+        {{/if}}
+        <p class="pull-right">
+          <a href="/ziadanky" class="btn btn-default">Späť na zoznam žiadaniek</a> 
+          <button type="submit" class="btn btn-success">Editovať</button>
+        </p>
+        {{/autoForm}}
+      
+      </div>
+    </div>
+
+    <hr>
+    
+  </div>
+</template>

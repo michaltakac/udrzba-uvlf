@@ -1,0 +1,43 @@
+<template name="statusZiadanka">
+{{#if equals status "TRUE"}}
+  <i class="fa fa-3x fa-check-square-o" title="Vybavené" style="color: #43CE18;"></i>
+{{else}}
+  <i class="fa fa-3x fa-exclamation-triangle" title="Čaká na riešenie..." style="color: #EDBA40;"></i>
+{{/if}}
+</template>
+
+<template name="statusNakup">
+{{#if equals status "TRUE"}}
+  <i class="fa fa-3x fa-check-square-o" title="Vybavené" style="color: #43CE18;"></i>
+{{else}}
+  <i class="fa fa-3x fa-clock-o" title="Čaká na vybavenie..." style="color: #c7c7c7;"></i>
+{{/if}}
+</template>
+
+<template name="editZiadanka">
+  <button type="button" class="btn btn-warning edit">Editovať</button>
+</template>
+
+<template name="ziadankaAddNakup">
+  <a href="/ziadanky/{{this._id}}/nakup" class="btn btn-primary">Nákup</a>
+</template>
+
+<template name="tlacZiadanka">
+  <button type="button" class="btn btn-success tlac">Tlač</button>
+</template>
+
+<template name="ziadankaLink">
+  <a href="/ziadanky/{{ziadankaId}}/edit" class="btn btn-primary">Otvoriť žiadanku</a>
+</template>
+
+<template name="editNakup">
+  <a href="/ziadanky/{{ziadankaId}}/nakup" class="btn btn-warning">Editovať</a>
+</template>
+
+<template name="tlacNakup">
+  <a href="/ziadanky/{{ziadankaId}}/tlac" class="btn btn-success">Tlač</a>
+</template>
+
+<template name="deleteNakup">
+  <button type="button" class="btn btn-danger delete">Odstrániť</button>
+</template>
