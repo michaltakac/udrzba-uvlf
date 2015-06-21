@@ -19,11 +19,16 @@
 </template>
 
 <template name="ziadankaAddNakup">
+  {{#if nakupExists}}
+  <a href="/ziadanky/{{this._id}}/nakup" class="btn btn-success">Nákup</a>
+  {{else}}
   <a href="/ziadanky/{{this._id}}/nakup" class="btn btn-primary">Nákup</a>
+  {{/if}}
 </template>
 
 <template name="tlacZiadanka">
-  <button type="button" class="btn btn-success tlac">Tlač</button>
+  <button type="button" class="btn btn-default tlac"><i class="fa fa-print"></i>
+ Tlač</button>
 </template>
 
 <template name="ziadankaLink">
@@ -35,7 +40,8 @@
 </template>
 
 <template name="tlacNakup">
-  <a href="/ziadanky/{{ziadankaId}}/tlac" class="btn btn-success">Tlač</a>
+  <a href="/ziadanky/{{ziadankaId}}/tlac" class="btn btn-default"><i class="fa fa-print"></i>
+ Tlač</a>
 </template>
 
 <template name="deleteNakup">

@@ -1173,5 +1173,115 @@ uvlf = [
         ]
       }
     ]
+  },
+  { 
+    "nazov": "Samostatné pracoviská",
+    "uroven": 1,
+    "pracoviska": [
+      { 
+        "nazov": "Ústav vedeckých informácií a knižnica",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Vedúci/a ústavu",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      }
+    ]
+  },
+  { 
+    "nazov": "Účelové zariadenia",
+    "uroven": 1,
+    "pracoviska": [
+      { 
+        "nazov": "Univerzitná lekáreň",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Riaditeľ/ka",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      },
+      { 
+        "nazov": "Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Riaditeľ/ka",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      },
+      { 
+        "nazov": "Jazdecký areál",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Riaditeľ/ka",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      },
+      { 
+        "nazov": "Študentské domovy",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Riaditeľ/ka",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      },
+      { 
+        "nazov": "Edičné stredisko a predajňa literatúry",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Vedúci/a",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      },
+      { 
+        "nazov": "TJ Slávia UVLF",
+        "uroven": 2,
+        "referat": [
+          { 
+            "nazov": "Vedúci/a",
+            "uroven": 3
+          },
+          { 
+            "nazov": "THP",
+            "uroven": 3
+          },
+        ]
+      }
+    ]
   }
 ]

@@ -15,6 +15,19 @@ referaty = [
     "nazov": "Vedúci/a oddelenia",
     "uroven": 3
   },
+  ,
+  { 
+    "nazov": "Vedúci/a",
+    "uroven": 3
+  },
+  { 
+    "nazov": "Riaditeľ/ḱa",
+    "uroven": 3
+  },
+  { 
+    "nazov": "Poverený vedením",
+    "uroven": 3
+  },
   { 
     "nazov": "Referát miezd",
     "uroven": 3

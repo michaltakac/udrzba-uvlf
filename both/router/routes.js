@@ -9,7 +9,8 @@ Router.route('/ziadanky', {
   layoutTemplate: 'appLayout',
   waitOn: function(){
     var subs = [
-      Meteor.subscribe('ziadanky')
+      Meteor.subscribe('ziadanky'),
+      Meteor.subscribe('nakupy')
     ]
     return subs;
   },

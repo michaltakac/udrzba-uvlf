@@ -37,7 +37,7 @@ Template.poziadavkaNakup.helpers({
   cislo: function() { 
     var today = new Date();
     var year = moment(today).format('YYYY');
-    return year + pad(Ziadanky.find().fetch().length+1, 5);
+    return year + ' / ' + pad(Ziadanky.find().fetch().length+1, 5);
   },
   datum: function() {
     var today = new Date()

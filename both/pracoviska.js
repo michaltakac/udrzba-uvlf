@@ -202,5 +202,33 @@ pracoviska = [
   { 
     "nazov": "Klinika vtákov, exotických a voľne žijúcich zvierat",
     "uroven": 2
+  },
+  { 
+    "nazov": "Ústav vedeckých informácií a knižnica",
+    "uroven": 2
+  },
+  { 
+    "nazov": "Univerzitná lekáreň",
+    "uroven": 2
+  },
+  { 
+    "nazov": "Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach",
+    "uroven": 2
+  },
+  { 
+    "nazov": "Jazdecký areál",
+    "uroven": 2
+  },
+  { 
+    "nazov": "Študentské domovy",
+    "uroven": 2
+  },
+  { 
+    "nazov": "Edičné stredisko a predajňa literatúry",
+    "uroven": 2
+  },
+  { 
+    "nazov": "TJ Slávia UVLF",
+    "uroven": 2
   }
 ]

@@ -4,6 +4,17 @@ Template.statusZiadanka.helpers({
   }
 });
 
+Template.ziadankaAddNakup.helpers({
+  nakupExists: function () {
+    var nakup = Nakupy.findOne({"ziadankaId": this._id});
+    if (!nakup) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+});
+
 Template.editNakup.helpers({
   ziadankaId: function () {
     return Nakupy.findOne(this._id).ziadankaId;

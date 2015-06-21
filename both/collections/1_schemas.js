@@ -6,8 +6,16 @@ function pad(str, max) {
 function filterPracovnikov(utvar) {
   var pracovnici = Pracovnici.find({utvar: utvar}).fetch();
   return pracovnici.map(function(ref) {
+    var titulPred = "";
+    var titulZa = "";
+    if (ref.titulPred) {
+      titulPred = ref.titulPred;
+    }
+    if (ref.titulZa) {
+      titulZa = ', '+ref.titulZa;
+    }
     return {
-      label: ref.titulPred+' '+ref.meno+' '+ref.priezvisko+', '+ref.titulZa, 
+      label: titulPred + ' ' + ref.meno + ' ' + ref.priezvisko + titulZa, 
       value: ref._id
     };
   });
@@ -78,7 +86,8 @@ Schemas.Pracovnici = new SimpleSchema({
     optional: true
   },
   email: { 
-    type: SimpleSchema.RegEx.Email
+    type: SimpleSchema.RegEx.Email,
+    optional: true
   },
   telefon: { 
     type: String,
@@ -198,6 +207,34 @@ Schemas.Ziadanky = new SimpleSchema({
           {
             optgroup: "Klinika vtákov, exotických a voľne žijúcich zvierat",
             options: filterPracovnikov("Klinika vtákov, exotických a voľne žijúcich zvierat")
+          },
+          {
+            optgroup: "Ústav vedeckých informácií a knižnica",
+            options: filterPracovnikov("Ústav vedeckých informácií a knižnica")
+          },
+          {
+            optgroup: "Univerzitná lekáreň",
+            options: filterPracovnikov("Univerzitná lekáreň")
+          },
+          {
+            optgroup: "Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach",
+            options: filterPracovnikov("Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach")
+          },
+          {
+            optgroup: "Jazdecký areál",
+            options: filterPracovnikov("Jazdecký areál")
+          },
+          {
+            optgroup: "Študentské domovy",
+            options: filterPracovnikov("Študentské domovy")
+          },
+          {
+            optgroup: "Edičné stredisko a predajňa literatúry",
+            options: filterPracovnikov("Edičné stredisko a predajňa literatúry")
+          },
+          {
+            optgroup: "TJ Slávia UVLF",
+            options: filterPracovnikov("TJ Slávia UVLF")
           }
         ];
       }
@@ -405,6 +442,34 @@ Schemas.Nakupy = new SimpleSchema({
           {
             optgroup: "Klinika vtákov, exotických a voľne žijúcich zvierat",
             options: filterPracovnikov("Klinika vtákov, exotických a voľne žijúcich zvierat")
+          },
+          {
+            optgroup: "Ústav vedeckých informácií a knižnica",
+            options: filterPracovnikov("Ústav vedeckých informácií a knižnica")
+          },
+          {
+            optgroup: "Univerzitná lekáreň",
+            options: filterPracovnikov("Univerzitná lekáreň")
+          },
+          {
+            optgroup: "Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach",
+            options: filterPracovnikov("Účelové zariadenie pre chov a choroby zveri, rýb a včiel v Rozanovciach")
+          },
+          {
+            optgroup: "Jazdecký areál",
+            options: filterPracovnikov("Jazdecký areál")
+          },
+          {
+            optgroup: "Študentské domovy",
+            options: filterPracovnikov("Študentské domovy")
+          },
+          {
+            optgroup: "Edičné stredisko a predajňa literatúry",
+            options: filterPracovnikov("Edičné stredisko a predajňa literatúry")
+          },
+          {
+            optgroup: "TJ Slávia UVLF",
+            options: filterPracovnikov("TJ Slávia UVLF")
           }
         ];
       }
