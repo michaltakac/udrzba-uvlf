@@ -25,10 +25,11 @@ Template.poziadavkaNakup.helpers({
   ziadatelInfo: function() {
     var pracovnikId = Session.get('pracovnikId');
     if (!pracovnikId) {
-      if (Nakupy.findOne().ziadatelInfo[0]) {
-        return Nakupy.findOne().ziadatelInfo[0];
-      } else {
+      var nakup = Nakupy.findOne().ziadatelInfo[0];
+      if (!nakup) {
         return false;
+      } else {
+        return nakup;
       }
     } else {
       return Pracovnici.findOne(pracovnikId);

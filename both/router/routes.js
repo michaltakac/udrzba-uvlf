@@ -99,7 +99,7 @@ Router.route('pridatPoziadavkuNakup', {
     var subs = [
       Meteor.subscribe('pracovnici'),
       Meteor.subscribe('ziadanka', this.params._id),
-      Meteor.subscribe('nakupy')
+      Meteor.subscribe('nakup', this.params._id)
     ]
     return subs;
   },
