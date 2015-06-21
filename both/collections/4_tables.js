@@ -41,7 +41,6 @@ TabularTables.Nakupy = new Tabular.Table({
   columns: [
     {data: "createdAt", title: "Dátum"},
     {data: "cisloZiadanky", title: "Číslo žiadanky pre opravu"},
-    {data: "pracovisko()", title: "Pracovisko"},
     {
       tmpl: Meteor.isClient && Template.statusNakup
     },
