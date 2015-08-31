@@ -33,16 +33,13 @@ Package.onUse(function(api) {
   // client
   api.addFiles([
     'index.html',
-    'lib/client/compatibility/bootstrap.js',
     'lib/helpers/helpers-ui.js',
     'lib/helpers/stringHelpers.js',
-    'lib/client/stylesheets/variables.import.less',
-    'lib/client/stylesheets/custom.less',
+    'lib/client/compatibility/bootstrap.js',
+    'lib/client/stylesheets/base/global.less',
     'lib/client/layouts/_header.html',
     'lib/client/layouts/_footer.html',
     'lib/client/layouts/appLayout.html',
-    'lib/client/layouts/ziadanka-tlac.html',
-    'lib/client/layouts/nakup-tlac.html',
     'lib/client/layouts/loading.html',
     'lib/client/layouts/notFound.html',
     'lib/client/buttons.html',

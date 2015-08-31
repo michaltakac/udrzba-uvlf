@@ -10,11 +10,15 @@ Package.onUse(function(api) {
   api.imply([
     'uvlf:udrzba-lib',
     'uvlf:udrzba-core',
-    'uvlf:udrzba-admin',
     'uvlf:udrzba-landing',
     'uvlf:udrzba-pracovnici',
     'uvlf:udrzba-ziadanky',
     'uvlf:udrzba-nakupy'
+  ], ['client', 'server']);
+
+  // Admin panel
+  api.imply([
+    'uvlf:udrzba-admin'
   ], ['client', 'server']);
 
 });

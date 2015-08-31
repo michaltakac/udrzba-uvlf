@@ -45,6 +45,7 @@ Package.onUse(function(api) {
     'lib/client/ziadanka-edit.js',
     'lib/client/poziadavka-oprava.html',
     'lib/client/poziadavka-oprava.js',
+    'lib/client/layouts/ziadanka-tlac.html'
   ], "client");
 
   // Routes

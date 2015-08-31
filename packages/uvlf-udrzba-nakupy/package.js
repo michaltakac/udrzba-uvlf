@@ -39,7 +39,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/client/nakupy.html',
     'lib/client/poziadavka-nakup.html',
-    'lib/client/poziadavka-nakup.js'
+    'lib/client/poziadavka-nakup.js',
+    'lib/client/layouts/nakup-tlac.html'
   ], "client");
 
   // Routes

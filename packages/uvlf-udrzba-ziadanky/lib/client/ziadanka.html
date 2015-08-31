@@ -1,163 +1,140 @@
 <template name="ziadanka">
+
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="form-title">Žiadanka na vlastnú opravu alebo údržbu č.: {{ziadanka.cislo}}</h3>
-        <form class="form-horizontal">
-          <!-- Kontakt -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Kontakt</label>
-            <div class="col-sm-9">
-              <span style="color: #072384;">{{ziadatelInfo.titulPred}} {{ziadatelInfo.meno}} {{ziadatelInfo.priezvisko}}, {{ziadatelInfo.titulZa}}</span>
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>Údržba UVLF</h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <h3>Žiadanka na vlastnú opravu alebo údržbu</h3>
+          <h3><small>{{ziadanka.cislo}}</small></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>From: <a href="#">Your Name</a></h4>
+            </div>
+            <div class="panel-body">
+              <p>
+                Address <br>
+                details <br>
+                more <br>
+              </p>
             </div>
           </div>
-          <!-- Utvar -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Útvar/katedra/klinika</label>
-            <div class="col-sm-9">
-              {{ziadatelInfo.utvar}}
+        </div>
+        <div class="col-xs-5 col-xs-offset-2 text-right">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>To : <a href="#">Client Name</a></h4>
+            </div>
+            <div class="panel-body">
+              <p>
+                Address <br>
+                details <br>
+                more <br>
+              </p>
             </div>
           </div>
-          <!-- Pracovisko -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Pracovisko</label>
-            <div class="col-sm-9">
-              {{ziadatelInfo.pracovisko}}
+        </div>
+      </div>
+      <!-- / end client details section -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>
+              <h4>Service</h4>
+            </th>
+            <th>
+              <h4>Description</h4>
+            </th>
+            <th>
+              <h4>Hrs/Qty</h4>
+            </th>
+            <th>
+              <h4>Rate/Price</h4>
+            </th>
+            <th>
+              <h4>Sub Total</h4>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Article</td>
+            <td><a href="#">Title of your article here</a></td>
+            <td class="text-right">-</td>
+            <td class="text-right">$200.00</td>
+            <td class="text-right">$200.00</td>
+          </tr>
+          <tr>
+            <td>Template Design</td>
+            <td><a href="#">Details of project here</a></td>
+            <td class="text-right">10</td>
+            <td class="text-right">75.00</td>
+            <td class="text-right">$750.00</td>
+          </tr>
+          <tr>
+            <td>Development</td>
+            <td><a href="#">WordPress Blogging theme</a></td>
+            <td class="text-right">5</td>
+            <td class="text-right">50.00</td>
+            <td class="text-right">$250.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row text-right">
+        <div class="col-xs-2 col-xs-offset-8">
+          <p>
+            <strong>
+            Sub Total : <br>
+            TAX : <br>
+            Total : <br>
+            </strong>
+          </p>
+        </div>
+        <div class="col-xs-2">
+          <strong>
+          $1200.00 <br>
+          N/A <br>
+          $1200.00 <br>
+          </strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-5">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4>Bank details</h4>
+            </div>
+            <div class="panel-body">
+              <p>Your Name</p>
+              <p>Bank Name</p>
+              <p>SWIFT : --------</p>
+              <p>Account Number : --------</p>
+              <p>IBAN : --------</p>
             </div>
           </div>
-          <!-- Referat -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Referát</label>
-            <div class="col-sm-9">
-              {{ziadatelInfo.referat}}
+        </div>
+        <div class="col-xs-7">
+          <div class="span7">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4>Contact Details</h4>
+              </div>
+              <div class="panel-body">
+                <p>
+                  Email : you@example.com <br><br>
+                  Mobile : -------- <br> <br>
+                  Twitter : <a href="https://twitter.com/tahirtaous">@TahirTaous</a>
+                </p>
+                <h4>Payment should be made by Bank Transfer</h4>
+              </div>
             </div>
           </div>
-          <!-- Email -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-9">
-              <a href="mailto:{{ziadatelInfo.email}}">{{ziadatelInfo.email}}</a>
-            </div>
-          </div>
-          <!-- Telefon -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Telefón</label>
-            <div class="col-sm-9">
-              <i>{{ziadatelInfo.telefon}}</i>
-            </div>
-          </div>
-          <!-- Klapka -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Klapka</label>
-            <div class="col-sm-9">
-              <i>{{ziadatelInfo.klapka}}</i>
-            </div>
-          </div>
-
-          <!-- Miesto problemu -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Miesto</label>
-            <div class="col-sm-9">
-              {{this.miesto}}
-            </div>
-          </div>
-          <!-- Predmet požiadavky -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Predmet požiadavky</label>
-            <div class="col-sm-9">
-              {{this.sprava}}
-            </div>
-          </div>
-          <!-- Dátum vystavenia -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Dátum vystavenia</label>
-            <div class="col-sm-9">
-              {{this.createdAt}}
-            </div>
-          </div>
-
-          <!-- Termín začatia prác -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Začatie prác</label>
-            <div class="col-sm-9">
-              {{ziadanka.zacatiePrac}}
-            </div>
-          </div>
-          <!-- Termín ukončenia prác -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Ukončenie prác</label>
-            <div class="col-sm-9">
-              {{ziadanka.ukonceniePrac}}
-            </div>
-          </div>
-          <!-- Súpis dodávok -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{{afFieldLabelText name='supisDodavok'}}</label>
-            <div class="col-sm-9">
-              {{> afFieldInput name='supisDodavok'}}
-            </div>
-          </div>
-          <!-- Priorita -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{{afFieldLabelText name='priorita'}}</label>
-            <div class="col-sm-9">
-              {{> afFieldInput name='priorita'}}
-            </div>
-          </div>
-          <!-- Prideleny pracovnik -->
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{{afFieldLabelText name='pridelenyPracovnik'}}</label>
-            <div class="col-sm-9">
-              {{> afFieldInput name='pridelenyPracovnik'}}
-            </div>
-          </div>
-
-        </form>
-      
+        </div>
       </div>
     </div>
-
-    <hr>
-    
-  </div>
-
-  <footer>
-    <div class="container" style="display:inline-block;">
-      <div class="pull-left">
-      <hr style="color: #FFF;
-                background-color: #FFF;
-                height: 1px;
-                width: 150px;
-                border-width: 1px medium medium;
-                border-style: dotted none none;
-                border-color: #000 -moz-use-text-color -moz-use-text-color;
-                -moz-border-top-colors: none;
-                -moz-border-right-colors: none;
-                -moz-border-bottom-colors: none;
-                -moz-border-left-colors: none;
-                border-image: none;
-                position: absolute;
-                float: left;"><br>
-        <span>Dátum</span>
-      </div>
-      <div class="pull-right">
-      <hr style="color: #FFF;
-                background-color: #FFF;
-                height: 1px;
-                width: 150px;
-                border-width: 1px medium medium;
-                border-style: dotted none none;
-                border-color: #000 -moz-use-text-color -moz-use-text-color;
-                -moz-border-top-colors: none;
-                -moz-border-right-colors: none;
-                -moz-border-bottom-colors: none;
-                -moz-border-left-colors: none;
-                border-image: none;
-                position: absolute;
-                float: right;"><br>
-        <span>Podpis</span>
-      </div>
-    </div>
-  </footer>
 </template>

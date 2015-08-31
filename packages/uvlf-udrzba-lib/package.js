@@ -26,9 +26,9 @@ Package.onUse(function(api) {
   var packages = [
     'meteor-platform',  
     'jquery',
+    'less',
     'accounts-password',
     'useraccounts:bootstrap',
-    'twbs:bootstrap',
     'alanning:roles',
     'aldeed:collection2',
     'aldeed:autoform',
@@ -90,7 +90,7 @@ Package.onUse(function(api) {
     'Template',
     'Blaze',
     'AutoForm',
-    'jQuery',
-    'select2'
+    'select2',
+    'Roles'
   ]);
 });
