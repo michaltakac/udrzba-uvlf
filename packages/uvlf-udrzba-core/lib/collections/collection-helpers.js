@@ -3,6 +3,9 @@ Pracovnici.before.insert(function (userId, doc) {
 });
 
 Ziadanky.helpers({
+  sprava: function () {
+    return Ziadanky.findOne(this._id).sprava;
+  },
   meno: function () {
     return Ziadanky.findOne(this._id).ziadatelInfo[0].meno;
   },

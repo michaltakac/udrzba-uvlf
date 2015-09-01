@@ -53,6 +53,9 @@ Template.editZiadanka.events({
 Template.tlacZiadanka.events({
   'click .tlac': function () {
     Router.go('/ziadanky/'+this._id);
+  },
+  'click .pdf': function () {
+    Router.go('/ziadanky/'+this._id+'/pdf');
   }
 });
 

@@ -33,6 +33,7 @@ Package.onUse(function(api) {
     'lib/server/publications/ziadanky.js',
     'lib/server/permissions/ziadanky.js',
     'lib/server/methods/ziadanky.js',
+    'lib/server/generate-pdf.js'
   ], "server");
 
   // Client files

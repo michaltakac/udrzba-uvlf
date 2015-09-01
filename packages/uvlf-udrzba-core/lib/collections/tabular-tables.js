@@ -14,7 +14,7 @@ TabularTables.Ziadanky = new Tabular.Table({
     {data: "createdAt", title: "Dátum"},
     {data: "cislo", title: "Číslo žiadanky"},
     {data: "priezvisko()", title: "Priezvisko"},
-    {data: "meno()", title: "Meno"},
+    {data: "sprava()", title: "Správa"},
     {
       tmpl: Meteor.isClient && Template.statusZiadanka
     },

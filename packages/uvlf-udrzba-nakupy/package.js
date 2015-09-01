@@ -52,6 +52,6 @@ Package.onUse(function(api) {
 
 
 Package.onTest(function (api) {
-  // api.use("tinytest");
-  api.use("uvlf:udrba-nakupy");
+  api.use("tinytest");
+  api.use("uvlf:udrzba-nakupy");
 });
