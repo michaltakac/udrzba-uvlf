@@ -77,6 +77,12 @@ Package.onUse(function(api) {
 
   // public files
   api.addFiles([
+    'public/fonts/font-awesome/FontAwesome.otf',
+    'public/fonts/font-awesome/fontawesome-webfont.eot',
+    'public/fonts/font-awesome/fontawesome-webfont.svg',
+    'public/fonts/font-awesome/fontawesome-webfont.ttf',
+    'public/fonts/font-awesome/fontawesome-webfont.woff',
+    'public/fonts/font-awesome/fontawesome-webfont.woff2',
   ], 'client');
 
 
@@ -91,7 +97,8 @@ Package.onUse(function(api) {
     'Ziadanky',
     'Nakupy',
     'TabularTables',
-    'Schemas'
+    'Schemas',
+    'fa'
   ]);
 
 });

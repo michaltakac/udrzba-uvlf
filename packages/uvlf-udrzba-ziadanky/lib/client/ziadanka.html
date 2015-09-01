@@ -2,96 +2,113 @@
 
   <div class="container">
 
-      <div class="row">
-        <div class="col-xs-6">
-          <h1>Údržba UVLF</h1>
-          <h3><small>Žiadanka na opravu alebo údržbu</small></h3>        
-        </div>
-        <div class="col-xs-6 text-right">
-          <h3>{{ziadanka.cislo}}</h3>
-        </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <h1>Údržba UVLF</h1>
+        <h3><small>Žiadanka na opravu alebo údržbu</small></h3>        
       </div>
-
-      <div class="row">
-        <div class="col-xs-5">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h4>Žiadateľ</h4>
-            </div>
-            <div class="panel-body">
-              <p><strong>Meno:</strong> {{ziadatelInfo.titulPred}} {{ziadatelInfo.meno}} {{ziadatelInfo.priezvisko}}{{#if ziadatelInfo.titulZa}}, {{ziadatelInfo.titulZa}}{{/if}}</p>
-              <p><strong>Útvar/katedra/klinika:</strong> {{ziadatelInfo.utvar}}</p>
-              <p><strong>Pracovisko:</strong> {{ziadatelInfo.pracovisko}}</p>
-              <p><strong>Referát:</strong> {{ziadatelInfo.referat}}</p>
-              <p><strong>Email:</strong> <span style="color: #0D3B8A;">{{ziadatelInfo.email}}</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-7">
-          <div class="span7">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h4>Požiadavka</h4>
-              </div>
-              <div class="panel-body">
-                <p>
-                  <strong>Miesto:</strong> {{this.miesto}} <br><br>
-                  <strong>Predmet požiadavky:</strong> {{this.sprava}} <br><br>
-                  <strong>Dátum vystavenia:</strong> {{this.createdAt}} <br><br>
-                  <strong>Začatie prác:</strong> {{this.zacatiePrac}} <br><br>
-                  <strong>Ukončenie prác:</strong> {{this.ukonceniePrac}} <br><br>
-                  <strong>Priorita:</strong> {{this.priorita}} <br><br>
-                  <strong>Pridelený pracovník:</strong> {{this.pridelenyPracovnik}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-6 text-right">
+        <h3>{{ziadanka.cislo}}</h3>
       </div>
-
-      <hr>
-
-      <div class="row">
-        <div class="col-md-12">
-          <label class="col-sm-3 control-label">Súpis dodávok</label>
-          <div class="col-sm-9">
-            {{this.supisDodavok}}
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <div class="col-md-4">
-          <p><span style="font-style: italic; font-weight: 700;">Vypracoval:</span></p>
-          <p>Vladimír Takáč</p>
-          <p>Oddelenie prevádzky a investícií</p>
-          <p>UVLF Košice</p>
-          <p>Tel.: +421 917 171 065</p>
-          <p style="color: #0D3B8A;">Vladimir.Takac@uvlf.sk</p>
-        </div>
-      </div>
-
-      <hr style="border: 1px dashed #CBCBCB;">
-      <p>Potvrdenie žiadateľa o vykonaní prác na žiadanke s ID: <strong>{{ziadanka.cislo}}</strong></p>
-
-      <div class="row" style="margin: 50px 0 50px 0;">
-        <div class="col-xs-4">
-          <p>
-            <strong>
-            Dátum: ............................. <br>
-            </strong>
-          </p>
-        </div>
-        <div class="col-xs-4 col-xs-offset-4 text-right">
-          <p>
-            <strong>
-            Podpis: ............................. <br>
-            </strong>
-          </p>
-        </div>
-      </div>
-
     </div>
+
+    <div class="row">
+      <div class="col-xs-5">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h4>Žiadateľ</h4>
+          </div>
+          <div class="panel-body">
+            <p><strong>Meno:</strong> {{ziadatelInfo.titulPred}} {{ziadatelInfo.meno}} {{ziadatelInfo.priezvisko}}{{#if ziadatelInfo.titulZa}}, {{ziadatelInfo.titulZa}}{{/if}}</p>
+            <p><strong>Útvar/katedra/klinika:</strong> {{ziadatelInfo.utvar}}</p>
+            <p><strong>Pracovisko:</strong> {{ziadatelInfo.pracovisko}}</p>
+            <p><strong>Referát:</strong> {{ziadatelInfo.referat}}</p>
+            <p><strong>Email:</strong> <span style="color: #0D3B8A;">{{ziadatelInfo.email}}</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-7">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="span7">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h4>Miesto</h4>
+                </div>
+                <div class="panel-body">
+                  <p>{{this.miesto}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="span7">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h4>Predmet požiadavky</h4>
+                </div>
+                <div class="panel-body">
+                  <p>{{this.sprava}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label class="col-sm-3 control-label">Súpis dodávok</label>
+        <div class="col-sm-9">
+          {{this.supisDodavok}}
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p><span style="font-style: italic; font-weight: 700;">Spracoval:</span></p>
+        <p>Vladimír Takáč<br>
+        Oddelenie prevádzky a investícií<br>
+        UVLF Košice<br>
+        Tel.: +421 917 171 065<br>
+        <span style="color: #0D3B8A;">Vladimir.Takac@uvlf.sk</span></p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          <strong>Dátum vystavenia:</strong> {{this.createdAt}} <br>
+          <strong>Začatie prác:</strong> {{this.zacatiePrac}} <br>
+          <strong>Ukončenie prác:</strong> {{this.ukonceniePrac}} <br>
+          <strong>Priorita:</strong> {{this.priorita}} <br>
+          <strong>Pridelený pracovník:</strong> {{this.pridelenyPracovnik}}
+        </p>
+      </div>
+    </div>
+
+    <hr style="border: 1px dashed #CBCBCB;">
+    <p>Potvrdenie žiadateľa o vykonaní prác na žiadanke s ID: <strong>{{ziadanka.cislo}}</strong></p>
+
+    <div class="row" style="margin: 250px 0 50px 0;">
+      <div class="col-xs-4">
+        <p>
+          <strong>
+          Dátum: ............................. <br>
+          </strong>
+        </p>
+      </div>
+      <div class="col-xs-4 col-xs-offset-4 text-right">
+        <p>
+          <strong>
+          Podpis: ............................. <br>
+          </strong>
+        </p>
+      </div>
+    </div>
+
+  </div>
 </template>
