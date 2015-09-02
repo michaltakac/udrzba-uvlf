@@ -1,11 +1,9 @@
-/*
-*  Controller: Žiadanka
-*  Template: /client/views/public/ziadanka.html
-*/
+var ziadankaSubs = new SubsManager();
 
-/*
-* Helpers
-*/
+Template.ziadanka.onCreated(function () {
+  ziadankaSubs.subscribe('ziadanka', this.params._id);
+});
+
 Template.ziadanka.helpers({
   ziadanka: function() {
     return Ziadanky.findOne();

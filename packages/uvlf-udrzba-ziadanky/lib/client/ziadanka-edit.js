@@ -1,11 +1,9 @@
-/*
-*  Controller: Editovať požiadavku
-*  Template: /client/views/public/ziadanka-edit.html
-*/
+var subs = new SubsManager();
 
-/*
-* Helpers
-*/
+Template.ziadankaEdit.onCreated(function () {
+  subs.subscribe('ziadanka', this.params._id);
+});
+
 Template.ziadankaEdit.helpers({
   ziadanka: function() {
     return Ziadanky.findOne();

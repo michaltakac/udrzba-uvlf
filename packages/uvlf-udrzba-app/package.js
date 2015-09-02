@@ -14,12 +14,12 @@ Package.onUse(function(api) {
     'uvlf:udrzba-pracovnici',
     'uvlf:udrzba-ziadanky',
     'uvlf:udrzba-nakupy',
-    'uvlf:udrzba-generate-pdf'
+    //'uvlf:udrzba-generate-pdf',
   ], ['client', 'server']);
 
   // Admin panel
   api.imply([
-    'uvlf:udrzba-admin'
+    //'uvlf:udrzba-admin'
   ], ['client', 'server']);
 
 });

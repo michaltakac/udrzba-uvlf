@@ -1,12 +1,14 @@
-/*
-*  Controller: Pridať požiadavku - oprava
-*  Template: /client/views/public/poziadavka-oprava.html
-*/
+var poziadavkaOpravaSubs = new SubsManager({
+  // maximum number of cache subscriptions
+  cacheLimit: 1,
+  // any subscription will be expire after 5 minute, if it's not subscribed again
+  expireIn: 1
+});
 
-
-/*
-* Helpers
-*/
+Template.poziadavkaOprava.onCreated(function () {
+  poziadavkaOpravaSubs.subscribe('pracovnici');
+  poziadavkaOpravaSubs.subscribe('ziadanky');
+});
 
 Template.poziadavkaOprava.helpers({
   pracovnici: function() {
@@ -23,7 +25,7 @@ Template.poziadavkaOprava.helpers({
       return Pracovnici.findOne(pracovnikId);
     }
   },
-  cislo: function() { 
+  cislo: function() {
     var today = new Date();
     var year = moment(today).format('YYYY');
     return year + ' / ' + pad(Ziadanky.find().fetch().length+1, 5);
@@ -40,6 +42,7 @@ Template.poziadavkaOprava.helpers({
 
 Template.poziadavkaOprava.events({
   'change [name="ziadatel"]': function(e) {
+    e.preventDefault();
     Session.set('pracovnikId', $(e.currentTarget).val());
   }
 });

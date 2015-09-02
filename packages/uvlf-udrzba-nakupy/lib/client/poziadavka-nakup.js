@@ -1,11 +1,12 @@
-/*
-*  Controller: Pridať požiadavku - nákup
-*  Template: /client/views/public/poziadavka-nakup.html
-*/
+var subs = new SubsManager();
 
-/*
-* Helpers
-*/
+Template.poziadavkaNakup.onCreated(function () {
+  subs.subscribe('nakupy');
+  subs.subscribe('pracovnici');
+  subs.subscribe('ziadanka', this.params._id);
+  subs.subscribe('nakup', this.params._id);
+});
+
 Template.poziadavkaNakup.helpers({
   nakup: function() {
     var ziadankaId = Router.current().params._id;
@@ -35,7 +36,7 @@ Template.poziadavkaNakup.helpers({
       return Pracovnici.findOne(pracovnikId);
     }
   },
-  cislo: function() { 
+  cislo: function() {
     var today = new Date();
     var year = moment(today).format('YYYY');
     return year + ' / ' + pad(Ziadanky.find().fetch().length+1, 5);

@@ -20,18 +20,17 @@ Package.onUse(function(api) {
   // Dependencies
   api.use([
     'uvlf:udrzba-lib',
-    'uvlf:udrzba-core',
-    'yogiben:admin',
+    'sach:flow-db-admin',
   ]);
 
   // Server files
-  api.addFiles([ 
+  api.addFiles([
 
   ], "server");
 
   // Shared files
   api.addFiles([
-    
+
   ]);
 
   // Client files

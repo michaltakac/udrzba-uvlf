@@ -38,6 +38,7 @@ Package.onUse(function(api) {
     'lib/client/compatibility/bootstrap.js',
     'lib/client/stylesheets/base/global.less',
     'lib/client/layouts/_header.html',
+    'lib/client/layouts/_header.js',
     'lib/client/layouts/_footer.html',
     'lib/client/layouts/appLayout.html',
     'lib/client/layouts/loading.html',
@@ -57,7 +58,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/server/email/templates/404.handlebars',
     'lib/server/email/templates/contactEmail.handlebars',
-    'lib/server/email/config.js'
+    'lib/server/email/config.js',
+    'lib/server/account-urls.js'
   ], 'server');
 
   // both
@@ -67,9 +69,6 @@ Package.onUse(function(api) {
     'lib/collections/collection-helpers.js',
     'lib/collections/tabular-tables.js',
     'lib/both/accounts/config.js',
-    'lib/both/controllers/app.js',
-    'lib/both/controllers/dashboard.js',
-    'lib/both/controllers/home.js',
     'lib/both/pracoviska.js',
     'lib/both/referaty.js',
     'lib/both/uvlf.js'
@@ -83,7 +82,7 @@ Package.onUse(function(api) {
 
   // Last but not least.. (optional)
   api.export([
-    'AppController',
+    'AccountsTemplates',
     'pracoviska',
     'referaty',
     'uvlf',
@@ -97,9 +96,6 @@ Package.onUse(function(api) {
   ]);
 
 });
-
-
-
 
 Package.onTest(function (api) {
   api.use([

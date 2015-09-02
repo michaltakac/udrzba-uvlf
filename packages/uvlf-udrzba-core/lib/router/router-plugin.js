@@ -1,8 +1,8 @@
-Router.plugin('ensureSignedIn', {
+/*Router.plugin('ensureSignedIn', {
   only: [
   'ziadanky',
   'poziadavkaNakup',
   'poziadavkaOprava',
   'ziadankaEdit'
   ]
-});
+});*/
