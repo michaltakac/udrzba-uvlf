@@ -109,9 +109,10 @@ Package.onUse(function(api) {
 Package.onTest(function (api) {
   api.use([
     'uvlf:udrzba-core',
-    'tinytest',
+    'sanjo:jasmine@0.18.0',
     'test-helpers',
     'templating',
     'reactive-dict'
   ], ['client']);
+
 });

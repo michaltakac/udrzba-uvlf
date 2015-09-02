@@ -24,13 +24,13 @@ Package.onUse(function(api) {
   ]);
 
   // Server files
-  api.addFiles([ 
+  api.addFiles([
 
   ], "server");
 
   // Shared files
   api.addFiles([
-    
+
   ]);
 
   // Client files
@@ -47,6 +47,6 @@ Package.onUse(function(api) {
 
 
 Package.onTest(function (api) {
-  // api.use("tinytest");
-  api.use('uvlf:udrzba-ziadanky');
+  api.use("sanjo:jasmine@0.18.0");
+  api.addFiles('tests/client/landing-spec.js', 'client');
 });

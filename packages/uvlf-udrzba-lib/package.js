@@ -24,7 +24,7 @@ Package.onUse(function(api) {
   //       which is more verbose and modular, but packages are defined in
   //       multiple places. You can always mix the two.
   var packages = [
-    'meteor-platform',  
+    'meteor-platform',
     'jquery',
     'less',
     'accounts-password',
