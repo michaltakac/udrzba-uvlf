@@ -12,6 +12,6 @@ cache:
     - ~/.meteor
 
 before_install:
-  - "curl -L http://git.io/ejPSng | /bin/sh"
+  - "curl https://install.meteor.com | /bin/sh"
 
 #script: ./run_nightwatch.sh
