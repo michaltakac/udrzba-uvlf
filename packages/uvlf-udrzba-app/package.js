@@ -13,7 +13,8 @@ Package.onUse(function(api) {
     'uvlf:udrzba-landing',
     'uvlf:udrzba-pracovnici',
     'uvlf:udrzba-ziadanky',
-    'uvlf:udrzba-nakupy'
+    'uvlf:udrzba-nakupy',
+    'uvlf:udrzba-generate-pdf'
   ], ['client', 'server']);
 
   // Admin panel

@@ -3,7 +3,7 @@ Router.route('generateZiadankaPDF', {
   where: 'server',
   action: function() {
     var ziadankaId = this.params._id
-    var webshot    = Meteor.npmRequire('webshot');
+    var webshot    = Npm.require('webshot');
     var fs         = Npm.require('fs');
     var Future     = Npm.require('fibers/future');
     var fut        = new Future();
@@ -13,8 +13,8 @@ Router.route('generateZiadankaPDF', {
     var options = {
       "renderDelay": 3000,
       "paperSize": {
-        "format": "Letter", 
-        "orientation": "portrait", 
+        "format": "Letter",
+        "orientation": "portrait",
         "margin": "1cm"
       }
     };
@@ -22,7 +22,7 @@ Router.route('generateZiadankaPDF', {
     webshot(url, fileName, options, function(err) {
       if (err) {
         return console.log(err);
-      } else { 
+      } else {
         fs.readFile(fileName, function (error,data) {
           if (error) {
             return console.log(err);

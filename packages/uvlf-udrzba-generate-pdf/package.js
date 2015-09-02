@@ -8,10 +8,14 @@
 //
 // * Each package should export a single gloval variable, unique to that module.
 Package.describe({
-  name: "uvlf:udrzba-ziadanky", // Reference you'll use in other modules to add this one.
+  name: "uvlf:udrzba-generate-pdf", // Reference you'll use in other modules to add this one.
   summary: "Some info" ,
   version: "0.1.0",
   git: ""
+});
+
+Npm.depends({
+  "webshot": "0.16.0"
 });
 
 Package.onUse(function(api) {
@@ -23,39 +27,14 @@ Package.onUse(function(api) {
     'uvlf:udrzba-core'
   ]);
 
-  // Shared files
-  api.addFiles([
-
-  ], ['client', 'server']);
-
   // Server files
   api.addFiles([
-    'lib/server/publications/ziadanky.js',
-    'lib/server/permissions/ziadanky.js',
-    'lib/server/methods/ziadanky.js'
+    'lib/server/generate-pdf.js'
   ], "server");
-
-  // Client files
-  api.addFiles([
-    'lib/autoform-hooks.js',
-    'lib/client/ziadanky.html',
-    'lib/client/ziadanka.html',
-    'lib/client/ziadanka.js',
-    'lib/client/ziadanka-edit.html',
-    'lib/client/ziadanka-edit.js',
-    'lib/client/poziadavka-oprava.html',
-    'lib/client/poziadavka-oprava.js',
-    'lib/client/layouts/ziadanka-tlac.html'
-  ], "client");
-
-  // Routes
-  api.addFiles([
-    'lib/client/router/routes.js'
-  ], "client");
 });
 
 
 Package.onTest(function (api) {
   // api.use("tinytest");
-  api.use("uvlf:udrzba-ziadanky");
+  api.use("uvlf:udrzba-generate-pdf");
 });

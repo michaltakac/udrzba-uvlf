@@ -53,8 +53,7 @@ Package.onUse(function(api) {
     'tsega:bootstrap3-datetimepicker',
     'rajit:bootstrap3-datepicker',
     'aldeed:tabular',
-    'msavin:mongol',
-    'meteorhacks:npm'
+    'msavin:mongol'
   ];
 
   api.use(packages);
