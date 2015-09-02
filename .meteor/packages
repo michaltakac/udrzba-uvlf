@@ -6,7 +6,4 @@
 
 uvlf:udrzba-app
 
-sanjo:jasmine
-velocity:html-reporter@0.4.3
-
 npm-container
