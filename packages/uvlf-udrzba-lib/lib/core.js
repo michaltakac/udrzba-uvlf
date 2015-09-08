@@ -273,6 +273,17 @@ App.utils.getHelper = function(template, helperName) {
   return Blaze._getTemplateHelper(template, helperName);
 }
 
+/**
+ * Utility for calculating ziadanka number and passing it as "0001", "0002", .. etc
+ *
+ * @param   {string} str - Incoming number
+ * @param   {string} max - max points in number.
+ */
+App.utils.pad = function(str, max) {
+  str = str.toString();
+  return str.length < max ? App.utils.pad("0" + str, max) : str;
+};
+
 // make sure App ends up in the global namespace
 App.utils.global.App = App;
 App.utils.global.Secondary = Secondary;

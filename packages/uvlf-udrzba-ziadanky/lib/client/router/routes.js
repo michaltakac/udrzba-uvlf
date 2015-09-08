@@ -2,7 +2,6 @@ FlowRouter.route('/ziadanky', {
   name: 'ziadanky',
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: function(params) {
-    console.log("Yeah! We are on the home page");
     BlazeLayout.render("appLayout", {area: "ziadanky"});
   }
 });
@@ -23,10 +22,10 @@ FlowRouter.route('/ziadanky/:_id/edit', {
   }
 });
 
-FlowRouter.route('/pridat-poziadavku/oprava', {
-  name: 'pridatPoziadavkuOprava',
+FlowRouter.route('/pridat-poziadavku', {
+  name: 'pridatPoziadavku',
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: function(params) {
-    BlazeLayout.render("appLayout", {area: "poziadavkaOprava"});
+    BlazeLayout.render("appLayout", {area: "poziadavka"});
   }
 });

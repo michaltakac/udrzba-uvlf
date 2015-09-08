@@ -1,40 +1,22 @@
-/*
-* Data: Ziadanky
-* Methods for inserting data into Ziadanky database.
-*/
-
-
-
-var Future = Npm.require('fibers/future');
-var Fiber  = Npm.require('fibers');
-
 Meteor.methods({
-
   vlozitZiadanku: function(ziadanka) {
     check(ziadanka, {
-      ziadatel: String,
-      ziadatelInfo: Array,
+      ziadatelId: String,
       miesto: String,
-      sprava: String,
-      typ: String,
-      cislo: String,
-      createdAt: String
+      sprava: String
     });
+
+    var today = new Date();
+    var year  = moment(today).format('YYYY');
 
     var nova = {
-      ziadatel: ziadanka.ziadatel,
-      ziadatelInfo: ziadanka.ziadatelInfo,
+      cislo: year + '/' + App.utils.pad(Ziadanky.find().fetch().length+1, 5),
+      ziadatel: ziadanka.ziadatelId,
       miesto: ziadanka.miesto,
       sprava: ziadanka.sprava,
-      typ: ziadanka.typ,
-      cislo: ziadanka.cislo,
-      createdAt: ziadanka.createdAt,
-    }
+      createdAt: moment( new Date() ).format("DD.MM.YYYY, HH:mm:ss")
+    };
 
-    Ziadanky.insert(ziadanka, function(error) {
-      if (error) {
-        throw new Meteor.Error("403", "Chyba pri vkladaní ziadanky do databázy");
-      }
-    });
+    Ziadanky.insert(nova);
   }
 });

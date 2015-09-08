@@ -1,6 +1,8 @@
-var subs = new SubsManager();
-
 Template.ziadanky.onCreated(function () {
-  subs.subscribe('ziadanky');
-  subs.subscribe('nakupy');
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('ziadanky');
+    self.subscribe('pracovnici');
+    self.subscribe('nakupy');
+  });
 });

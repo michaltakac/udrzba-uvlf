@@ -1,10 +1,7 @@
-// App: Library (First layer)
-// * All packages used by the app (minus development-only packages) should
-//   be defined here.
-// * Code in this package is guaranteed to run before any other part of the app.
-// * All other packages depend on this package. This is a great place to define
-//   shared utilities as well as extend/add functionality to any packagee before
-//   the application loads it.
+/**
+ * Udzrba - lib package
+ *
+ */
 Package.describe({
   name: 'uvlf:udrzba-lib', // All modules should api.use() this.
   summary: 'Application core library.',
@@ -15,30 +12,26 @@ Package.onUse(function(api) {
 
   api.versionsFrom('1.1.0.3');
 
-  // Global packages
-  // * You have 2 options for handling atmoshpere packages:
-  //    1. Put all dependendencies for all modules here. Advantage is that all
-  //       version constraints, load order, extending packages, and anything
-  //       else can be done here, in one single file.
-  //    2. Explicity define the dependencies for each module within its manifest
-  //       which is more verbose and modular, but packages are defined in
-  //       multiple places. You can always mix the two.
   var packages = [
     'meteor-platform',
     'jquery',
     'less',
     'handlebars',
+    'reactive-var',
     'accounts-password',
     'useraccounts:bootstrap',
     'alanning:roles',
     'aldeed:collection2',
     'aldeed:autoform',
+    'twbs:bootstrap',
+    'themeteorchef:jquery-validation',
     'arillo:flow-router-helpers',
     'kadira:flow-router',
     'kadira:blaze-layout',
+    'themeteorchef:bert',
     'meteorhacks:subs-manager@1.6.2',
-    'cmather:handlebars-server',
-    'dburles:collection-helpers@1.0.3',
+    'cmather:handlebars-server@0.2.0',
+    'dburles:collection-helpers',
     'reywood:publish-composite@1.3.3',
     'momentjs:moment@2.10.6',
     'mrt:underscore-string-latest',
@@ -49,14 +42,14 @@ Package.onUse(function(api) {
     'useraccounts:flow-routing',
     'yasinuslu:blaze-meta',
     'fortawesome:fontawesome',
+    'natestrauser:select2',
     'aldeed:autoform-select2',
     'numeral:numeral',
     'aldeed:autoform-bs-datetimepicker',
     'aldeed:autoform-bs-datepicker',
     'tsega:bootstrap3-datetimepicker@0.3.0',
     'rajit:bootstrap3-datepicker',
-    'aldeed:tabular',
-    'msavin:mongol'
+    //'aldeed:tabular'
   ];
 
   api.use(packages);
@@ -95,6 +88,7 @@ Package.onUse(function(api) {
     'BlazeLayout',
     'AutoForm',
     'select2',
-    'Roles'
+    'Roles',
+    'AutoForm'
   ]);
 });

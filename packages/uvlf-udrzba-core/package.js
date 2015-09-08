@@ -35,7 +35,7 @@ Package.onUse(function(api) {
     'index.html',
     'lib/helpers/helpers-ui.js',
     'lib/helpers/stringHelpers.js',
-    'lib/client/compatibility/bootstrap.js',
+    //'lib/client/compatibility/bootstrap.js',
     'lib/client/stylesheets/base/global.less',
     'lib/client/layouts/_header.html',
     'lib/client/layouts/_header.js',
@@ -51,7 +51,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/router/config.js',
     'lib/router/router-plugin.js',
-    'lib/router/meta.js'
+    'lib/router/meta.js',
+    'lib/both/bert-config.js'
   ], 'client');
 
   // server
@@ -67,7 +68,7 @@ Package.onUse(function(api) {
     'lib/collections/schemas.js',
     'lib/collections/collections.js',
     'lib/collections/collection-helpers.js',
-    'lib/collections/tabular-tables.js',
+    //'lib/collections/tabular-tables.js',
     'lib/both/accounts/config.js',
     'lib/both/pracoviska.js',
     'lib/both/referaty.js',

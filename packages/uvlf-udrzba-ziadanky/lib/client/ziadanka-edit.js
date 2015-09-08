@@ -1,7 +1,9 @@
-var subs = new SubsManager();
-
 Template.ziadankaEdit.onCreated(function () {
-  subs.subscribe('ziadanka', this.params._id);
+  var self = this;
+  self.autorun(function() {
+    var ziadankaId = FlowRouter.getParam('_id')
+    self.subscribe('ziadanka', ziadankaId);
+  });
 });
 
 Template.ziadankaEdit.helpers({

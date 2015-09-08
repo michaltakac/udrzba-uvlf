@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   // Dependencies
   api.use([
     'uvlf:udrzba-lib',
-    'sach:flow-db-admin',
+    'uvlf:udrzba-flow-admin',
   ]);
 
   // Server files
