@@ -100,9 +100,9 @@ url@1.0.4
 useraccounts:bootstrap@1.0.1
 useraccounts:core@1.12.3
 useraccounts:flow-routing@1.12.3
+uvlf:udrzba-admin@1.0.0
 uvlf:udrzba-app@0.0.1
 uvlf:udrzba-core@1.0.0
-uvlf:udrzba-flow-admin@1.0.0
 uvlf:udrzba-generate-pdf@0.1.0
 uvlf:udrzba-landing@0.1.0
 uvlf:udrzba-lib@1.0.0

@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 
   // Admin panel
   api.imply([
-    'uvlf:udrzba-flow-admin'
+    'uvlf:udrzba-admin'
   ], ['client', 'server']);
 
 });

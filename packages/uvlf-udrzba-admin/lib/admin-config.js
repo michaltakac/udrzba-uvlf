@@ -1,7 +1,7 @@
-AdminConfig = { 
+AdminConfig = {
   nonAdminRedirectRoute: 'entrySignIn',
-  collections: { 
-    Pracovnici: { 
+  collections: {
+    Pracovnici: {
       tableColumns: [
         {label: 'Titul pred', name: 'titulPred'},
         {label: 'Meno', name: 'meno'},
@@ -20,5 +20,5 @@ AdminConfig = {
     omitFields: ['createdAt', 'updatedAt']
   }
 }
-  
- 
+
+
