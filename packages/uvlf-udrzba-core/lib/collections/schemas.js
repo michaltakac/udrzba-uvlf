@@ -1,8 +1,3 @@
-function pad(str, max) {
-  str = str.toString();
-  return str.length < max ? pad("0" + str, max) : str;
-}
-
 function filterPracovnikov(utvar) {
   var pracovnici = Pracovnici.find({utvar: utvar}).fetch();
   return pracovnici.map(function(ref) {
@@ -15,7 +10,7 @@ function filterPracovnikov(utvar) {
       titulZa = ', '+ref.titulZa;
     }
     return {
-      label: titulPred + ' ' + ref.meno + ' ' + ref.priezvisko + titulZa, 
+      label: titulPred + ' ' + ref.meno + ' ' + ref.priezvisko + titulZa,
       value: ref._id
     };
   });
@@ -26,15 +21,15 @@ Schemas = {};
 
 Meteor.isClient && Template.registerHelper("Schemas", Schemas);
 
-Schemas.Pracovnici = new SimpleSchema({ 
+Schemas.Pracovnici = new SimpleSchema({
   utvar: {
     type: String,
-    autoform: { 
+    autoform: {
       type: "select2",
       options: function() {
         return uvlf.map(function(utvar) {
           return {
-            label: utvar.nazov, 
+            label: utvar.nazov,
             value: utvar.nazov
           };
         });
@@ -43,12 +38,12 @@ Schemas.Pracovnici = new SimpleSchema({
   },
   pracovisko: {
     type: String,
-    autoform: { 
+    autoform: {
       type: "select2",
       options: function() {
         return pracoviska.map(function(pracovisko) {
           return {
-            label: pracovisko.nazov, 
+            label: pracovisko.nazov,
             value: pracovisko.nazov
           };
         });
@@ -57,51 +52,51 @@ Schemas.Pracovnici = new SimpleSchema({
   },
   referat: {
     type: String,
-    autoform: { 
+    autoform: {
       type: "select2",
       options: function() {
         return referaty.map(function(referat) {
           return {
-            label: referat.nazov, 
+            label: referat.nazov,
             value: referat.nazov
           };
         });
       }
     }
   },
-  titulPred: { 
+  titulPred: {
     type: String,
     max: 20,
     optional: true
   },
-  meno: { 
+  meno: {
     type: String
   },
-  priezvisko: { 
+  priezvisko: {
     type: String
   },
-  titulZa: { 
+  titulZa: {
     type: String,
     max: 20,
     optional: true
   },
-  email: { 
+  email: {
     type: SimpleSchema.RegEx.Email,
     optional: true
   },
-  telefon: { 
+  telefon: {
     type: String,
     optional: true
   },
-  klapka: { 
+  klapka: {
     type: String,
     optional: true
   },
-  createdAt: { 
+  createdAt: {
     type: Date,
     label: 'Date',
-    autoValue: function() { 
-      if (this.isInsert) { 
+    autoValue: function() {
+      if (this.isInsert) {
         return new Date();
       }
     },
@@ -110,16 +105,13 @@ Schemas.Pracovnici = new SimpleSchema({
 });
 
 Schemas.Ziadanky = new SimpleSchema({
-  cislo: { 
+  cislo: {
     type: String
   },
-  typ: {
-    type: String,
-    optional: true
-  },
-  ziadatel: { 
+  ziadatelId: {
     type: String,
     label: 'Žiadateľ',
+    optional: true,
     autoform: {
       type: "select2",
       options: function () {
@@ -240,48 +232,44 @@ Schemas.Ziadanky = new SimpleSchema({
       }
     }
   },
-  ziadatelInfo: { 
-    type: [Object],
-    minCount: 1
-  },
-  'ziadatelInfo.$.utvar': {
+  'ziadatelInfo_utvar': {
     type: String
   },
-  'ziadatelInfo.$.pracovisko': {
+  'ziadatelInfo_pracovisko': {
     type: String
   },
-  'ziadatelInfo.$.referat': {
+  'ziadatelInfo_referat': {
     type: String
   },
-  'ziadatelInfo.$.titulPred': { 
+  'ziadatelInfo_titulPred': {
     type: String,
     max: 20,
     optional: true
   },
-  'ziadatelInfo.$.meno': { 
+  'ziadatelInfo_meno': {
     type: String
   },
-  'ziadatelInfo.$.priezvisko': { 
+  'ziadatelInfo_priezvisko': {
     type: String
   },
-  'ziadatelInfo.$.titulZa': { 
+  'ziadatelInfo_titulZa': {
     type: String,
     max: 20,
     optional: true
   },
-  'ziadatelInfo.$.email': { 
+  'ziadatelInfo_email': {
     type: SimpleSchema.RegEx.Email
   },
-  'ziadatelInfo.$.telefon': { 
+  'ziadatelInfo_telefon': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.klapka': { 
+  'ziadatelInfo_klapka': {
     type: String,
     optional: true
   },
   sprava: {
-    type: String, 
+    type: String,
     label: 'Predmet požiadavky',
     autoform: {
       rows: 8
@@ -306,7 +294,7 @@ Schemas.Ziadanky = new SimpleSchema({
     label: 'Súpis dodávok',
     optional: true,
     autoform: {
-      rows: 5
+      rows: 6
     }
   },
   priorita: {
@@ -335,24 +323,35 @@ Schemas.Ziadanky = new SimpleSchema({
     label: 'Vybavené?',
     optional: true
   },
-  createdAt: { 
+  nakupId: {
     type: String,
-    label: 'Date'
+    label: 'Nákup',
+    optional: true
+  },
+  createdAt: {
+    type: Date,
+    label: 'Date',
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date();
+      }
+    },
+    optional: true
   }
 });
 
 Schemas.Nakupy = new SimpleSchema({
-  cisloZiadanky: { 
+  cisloZiadanky: {
     type: String
   },
-  ziadankaId: { 
+  ziadankaId: {
     type: String
   },
   typ: {
     type: String,
     optional: true
   },
-  ziadatel: { 
+  ziadatel: {
     type: String,
     label: 'Žiadateľ',
     autoform: {
@@ -476,55 +475,50 @@ Schemas.Nakupy = new SimpleSchema({
     },
     optional: true
   },
-  ziadatelInfo: { 
-    type: [Object],
-    minCount: 1,
-    optional: true
-  },
-  'ziadatelInfo.$.utvar': {
+  'ziadatelInfo_utvar': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.pracovisko': {
+  'ziadatelInfo_pracovisko': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.referat': {
+  'ziadatelInfo_referat': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.titulPred': { 
+  'ziadatelInfo_titulPred': {
     type: String,
     max: 20,
     optional: true
   },
-  'ziadatelInfo.$.meno': { 
+  'ziadatelInfo_meno': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.priezvisko': { 
+  'ziadatelInfo_priezvisko': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.titulZa': { 
+  'ziadatelInfo_titulZa': {
     type: String,
     max: 20,
     optional: true
   },
-  'ziadatelInfo.$.email': { 
+  'ziadatelInfo_email': {
     type: SimpleSchema.RegEx.Email,
     optional: true
   },
-  'ziadatelInfo.$.telefon': { 
+  'ziadatelInfo_telefon': {
     type: String,
     optional: true
   },
-  'ziadatelInfo.$.klapka': { 
+  'ziadatelInfo_klapka': {
     type: String,
     optional: true
   },
   sprava: {
-    type: String, 
+    type: String,
     label: 'Predmet požiadavky',
     autoform: {
       rows: 8
@@ -536,7 +530,7 @@ Schemas.Nakupy = new SimpleSchema({
     label: 'Vybavené?',
     optional: true
   },
-  createdAt: { 
+  createdAt: {
     type: String,
     label: 'Date'
   }

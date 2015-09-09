@@ -23,9 +23,12 @@ Package.onUse(function(api) {
     'uvlf:udrzba-core'
   ]);
 
-  // Shared files
+  // both
   api.addFiles([
-
+    'lib/collections/ziadanky-schema.js',
+    'lib/collections/ziadanky-collection.js',
+    'lib/collections/ziadanky-collection-helpers.js',
+    'lib/collections/tabulartables-ziadanky.js'
   ], ['client', 'server']);
 
   // Server files
@@ -37,14 +40,16 @@ Package.onUse(function(api) {
 
   // Client files
   api.addFiles([
-    'lib/autoform-hooks.js',
+    //'lib/autoform-hooks.js',
+    'lib/client/table-ziadanka-tools.html',
+    'lib/client/table-ziadanka-tools.js',
     'lib/client/ziadanky.html',
     'lib/client/ziadanka.html',
     'lib/client/ziadanka.js',
     'lib/client/ziadanka-edit.html',
     'lib/client/ziadanka-edit.js',
-    'lib/client/poziadavka-oprava.html',
-    'lib/client/poziadavka-oprava.js',
+    'lib/client/poziadavka.html',
+    'lib/client/poziadavka.js',
     'lib/client/layouts/ziadanka-tlac.html'
   ], "client");
 
@@ -52,6 +57,10 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/client/router/routes.js'
   ], "client");
+
+  api.export([
+    'Ziadanky'
+  ]);
 });
 
 

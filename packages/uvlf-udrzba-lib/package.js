@@ -49,7 +49,7 @@ Package.onUse(function(api) {
     'aldeed:autoform-bs-datepicker',
     'tsega:bootstrap3-datetimepicker@0.3.0',
     'rajit:bootstrap3-datepicker',
-    //'aldeed:tabular'
+    'aldeed:tabular'
   ];
 
   api.use(packages);
@@ -89,6 +89,7 @@ Package.onUse(function(api) {
     'AutoForm',
     'select2',
     'Roles',
-    'AutoForm'
+    'AutoForm',
+    'Bert'
   ]);
 });

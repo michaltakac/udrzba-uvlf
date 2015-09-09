@@ -68,7 +68,7 @@ Package.onUse(function(api) {
     'lib/collections/schemas.js',
     'lib/collections/collections.js',
     'lib/collections/collection-helpers.js',
-    //'lib/collections/tabular-tables.js',
+    'lib/collections/tabular-tables.js',
     'lib/both/accounts/config.js',
     'lib/both/pracoviska.js',
     'lib/both/referaty.js',
@@ -89,11 +89,10 @@ Package.onUse(function(api) {
     'uvlf',
     'SimpleSchema',
     'Pracovnici',
-    'Ziadanky',
     'Nakupy',
     'TabularTables',
     'Schemas',
-    'fa'
+    'Bert'
   ]);
 
 });
