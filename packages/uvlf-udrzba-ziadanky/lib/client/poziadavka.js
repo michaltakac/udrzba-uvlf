@@ -83,6 +83,9 @@ Template.poziadavka.helpers({
  * Events
  */
 Template.poziadavka.events({
+  'submit form': function(e) {
+    e.preventDefault();
+  },
   'change [name="ziadatel"]': function(e) {
     e.preventDefault();
     pracovnikId.set($(e.currentTarget).val());

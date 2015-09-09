@@ -1,40 +1,36 @@
-Router.route('generateZiadankaPDF', {
-  path: '/ziadanky/:_id/pdf',
-  where: 'server',
-  action: function() {
-    var ziadankaId = this.params._id
-    var webshot    = Npm.require('webshot');
-    var fs         = Npm.require('fs');
-    var Future     = Npm.require('fibers/future');
-    var fut        = new Future();
-    var fileName   = "ziadanka_" + ziadankaId + ".pdf";
-    var url        = Meteor.absoluteUrl('ziadanky/' + ziadankaId);
+Picker.route('/ziadanky/:_id/pdf', function(params, req, res, next) {
+  var ziadankaId = params._id
+  var webshot    = Npm.require('webshot');
+  var fs         = Npm.require('fs');
+  var Future     = Npm.require('fibers/future');
+  var fut        = new Future();
+  var fileName   = "ziadanka_" + ziadankaId + ".pdf";
+  var url        = Meteor.absoluteUrl('ziadanky/' + ziadankaId);
 
-    var options = {
-      "renderDelay": 3000,
-      "paperSize": {
-        "format": "Letter",
-        "orientation": "portrait",
-        "margin": "1cm"
-      }
-    };
+  var options = {
+    "renderDelay": 3000,
+    "paperSize": {
+      "format": "Letter",
+      "orientation": "portrait",
+      "margin": "1cm"
+    }
+  };
 
-    webshot(url, fileName, options, function(err) {
-      if (err) {
-        return console.log(err);
-      } else {
-        fs.readFile(fileName, function (error,data) {
-          if (error) {
-            return console.log(err);
-          }
+  webshot(url, fileName, options, function(err) {
+    if (err) {
+      return console.log(err);
+    } else {
+      fs.readFile(fileName, function (error,data) {
+        if (error) {
+          return console.log(err);
+        }
 
-          fs.unlinkSync(fileName);
-          fut.return(data);
-        });
-      }
-    });
+        fs.unlinkSync(fileName);
+        fut.return(data);
+      });
+    }
+  });
 
-    this.response.writeHead(200, {'Content-Type': 'application/pdf',"Content-Disposition": "attachment; filename=" + fileName});
-    this.response.end(fut.wait());
-  }
+  res.writeHead(200, {'Content-Type': 'application/pdf',"Content-Disposition": "attachment; filename=" + fileName});
+  res.end(fut.wait());
 });

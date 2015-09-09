@@ -29,23 +29,16 @@ Template.tableZiadankaTools.helpers({
 });
 
 Template.tableZiadankaTools.events({
-  'click [data-action="edit"]': function (e) {
+  'click [data-action="pdf"]': function(e) {
     e.preventDefault();
-    Router.go('/ziadanky/'+this._id+'/edit');
-  },
-  'click [data-action="nahlad-tlace"]': function (e) {
-    e.preventDefault();
-    Router.go('/ziadanky/'+this._id);
-  },
-  'click [data-action="pdf"]': function (e) {
-    e.preventDefault();
-    Router.go('/ziadanky/'+this._id+'/pdf');
+    FlowRouter.go('/ziadanky/'+this._id+'/pdf');
   },
   'click [data-action="delete-ziadanka"]': function (e) {
     e.preventDefault();
-    var confirmDelete = confirm('Naozaj chcete odstrániť žiadanku pre nákup?');
+    var confirmDelete = confirm('Naozaj chcete odstrániť žiadanku?');
     if (confirmDelete) {
-      Nakupy.remove(this._id);
+      Ziadanky.remove(this._id);
+      Bert.alert("Žiadanka bola odstránená.", 'success', 'growl-top-right');
     }
   }
 });

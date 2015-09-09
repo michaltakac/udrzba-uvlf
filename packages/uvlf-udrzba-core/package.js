@@ -1,14 +1,7 @@
-// App: Core (3rd layer)
-//
-// * This is where your modules are built into an application. The only package
-// you should have to `meteor add` is  `metepor add app:core`. This package
-// also acts as an umbrella by including alll your app's dependencies/code, and
-// alko acts as a namespace manager.
-//
-// *  In each module, you should have exported a single global variable with
-//    anything that we might neeed to access. Here in app:core, move these
-//    exports into the 'App' global namespace.
-
+/**
+ * Core package
+ *
+ */
 Package.describe({
   name: 'uvlf:udrzba-core',
   summary: 'Core application package.',
@@ -43,8 +36,8 @@ Package.onUse(function(api) {
     'lib/client/layouts/appLayout.html',
     'lib/client/layouts/loading.html',
     'lib/client/layouts/notFound.html',
-    'lib/client/buttons.html',
-    'lib/client/buttons.js',
+    //'lib/client/buttons.html',
+    //'lib/client/buttons.js',
   ], 'client');
 
   // Routing
@@ -67,7 +60,6 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/collections/schemas.js',
     'lib/collections/collections.js',
-    'lib/collections/collection-helpers.js',
     'lib/collections/tabular-tables.js',
     'lib/both/accounts/config.js',
     'lib/both/pracoviska.js',
@@ -87,12 +79,12 @@ Package.onUse(function(api) {
     'pracoviska',
     'referaty',
     'uvlf',
+    'Collections',
     'SimpleSchema',
-    'Pracovnici',
-    'Nakupy',
     'TabularTables',
     'Schemas',
-    'Bert'
+    'Bert',
+    'Picker'
   ]);
 
 });

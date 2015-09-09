@@ -1,12 +1,7 @@
-// App: Module (Layer 2)
-//
-// * Most of your app's code will be in the form of these modules. How you
-//  decide to separate your modules will affect your workflow greatly so think
-//  hard! Tip: your collections are usually good indicators of separation. If
-//   you create one called 'app-collections' or 'app-views' you're doing it
-//   wrong.
-//
-// * Each package should export a single gloval variable, unique to that module.
+/**
+ * Generate PDF
+ *
+ */
 Package.describe({
   name: "uvlf:udrzba-generate-pdf", // Reference you'll use in other modules to add this one.
   summary: "Some info" ,

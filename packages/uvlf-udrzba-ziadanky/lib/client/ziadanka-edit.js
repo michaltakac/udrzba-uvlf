@@ -23,3 +23,9 @@ Template.ziadankaEdit.helpers({
 	return moment(cas).format('DD.MM.YYYY');
   }
 });
+
+Template.ziadankaEdit.events({
+  'submit form': function(e) {
+    e.preventDefault();
+  }
+});

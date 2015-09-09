@@ -284,6 +284,29 @@ App.utils.pad = function(str, max) {
   return str.length < max ? App.utils.pad("0" + str, max) : str;
 };
 
+/**
+ * Filter pracovnikov
+ *
+ * @param   {string} utvar -
+ */
+App.utils.filterPracovnikov = function(utvar) {
+  var pracovnici = Pracovnici.find({utvar: utvar}).fetch();
+  return pracovnici.map(function(ref) {
+    var titulPred = "";
+    var titulZa = "";
+    if (ref.titulPred) {
+      titulPred = ref.titulPred;
+    }
+    if (ref.titulZa) {
+      titulZa = ', '+ref.titulZa;
+    }
+    return {
+      label: titulPred + ' ' + ref.meno + ' ' + ref.priezvisko + titulZa,
+      value: ref._id
+    };
+  });
+};
+
 // make sure App ends up in the global namespace
 App.utils.global.App = App;
 App.utils.global.Secondary = Secondary;

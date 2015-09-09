@@ -1,7 +1,3 @@
-Pracovnici.before.insert(function (userId, doc) {
-  doc.createdAt = moment().toDate();
-});
-
 Nakupy.helpers({
   meno: function () {
     return Nakupy.findOne(this._id).ziadatelInfo[0].meno;

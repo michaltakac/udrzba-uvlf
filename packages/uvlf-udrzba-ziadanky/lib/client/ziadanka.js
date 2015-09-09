@@ -1,7 +1,7 @@
 Template.ziadanka.onCreated(function () {
   var self = this;
   self.autorun(function() {
-    var ziadankaId = FlowRouter.getParams('_id');
+    var ziadankaId = FlowRouter.getParam('_id');
     self.subscribe('ziadanka', ziadankaId);
   });
 });

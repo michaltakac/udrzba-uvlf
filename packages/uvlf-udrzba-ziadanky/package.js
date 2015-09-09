@@ -1,12 +1,7 @@
-// App: Module (Layer 2)
-//
-// * Most of your app's code will be in the form of these modules. How you
-//  decide to separate your modules will affect your workflow greatly so think
-//  hard! Tip: your collections are usually good indicators of separation. If
-//   you create one called 'app-collections' or 'app-views' you're doing it
-//   wrong.
-//
-// * Each package should export a single gloval variable, unique to that module.
+/**
+ * Ziadanky package
+ *
+ */
 Package.describe({
   name: "uvlf:udrzba-ziadanky", // Reference you'll use in other modules to add this one.
   summary: "Some info" ,
@@ -23,6 +18,23 @@ Package.onUse(function(api) {
     'uvlf:udrzba-core'
   ]);
 
+  // Client files
+  api.addFiles([
+    'lib/client/status-ziadanka.html',
+    'lib/client/status-ziadanka.js',
+    'lib/client/table-ziadanka-tools.html',
+    'lib/client/table-ziadanka-tools.js',
+    'lib/client/ziadanky.html',
+    'lib/client/ziadanky.js',
+    'lib/client/ziadanka.html',
+    'lib/client/ziadanka.js',
+    'lib/client/ziadanka-edit.html',
+    'lib/client/ziadanka-edit.js',
+    'lib/client/poziadavka.html',
+    'lib/client/poziadavka.js',
+    'lib/client/layouts/ziadanka-tlac.html'
+  ], "client");
+
   // both
   api.addFiles([
     'lib/collections/ziadanky-schema.js',
@@ -37,21 +49,6 @@ Package.onUse(function(api) {
     'lib/server/permissions/ziadanky.js',
     'lib/server/methods/ziadanky.js'
   ], "server");
-
-  // Client files
-  api.addFiles([
-    //'lib/autoform-hooks.js',
-    'lib/client/table-ziadanka-tools.html',
-    'lib/client/table-ziadanka-tools.js',
-    'lib/client/ziadanky.html',
-    'lib/client/ziadanka.html',
-    'lib/client/ziadanka.js',
-    'lib/client/ziadanka-edit.html',
-    'lib/client/ziadanka-edit.js',
-    'lib/client/poziadavka.html',
-    'lib/client/poziadavka.js',
-    'lib/client/layouts/ziadanka-tlac.html'
-  ], "client");
 
   // Routes
   api.addFiles([

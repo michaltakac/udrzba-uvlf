@@ -1,7 +1,7 @@
 <template name="tableZiadankaTools">
-  <a href="/ziadanka/{{ziadankaId}}/edit" data-action="edit"><i class="fa fa-custom fa-pencil-square-o edit" alt="Upraviť"></i></a>
-  <a href="/ziadanka/{{ziadankaId}}/nakup" data-action="nakup"><i class="fa fa-custom fa-cart-plus nakup" alt="Nákup"></i></a>
-  <a href="/ziadanka/{{ziadankaId}}/nahlad-tlace" data-action="nahlad-tlace"><i class="fa fa-custom fa-print nahlad" alt="Náhľad tlače"></i></a>
-  <a href="/ziadanka/{{ziadankaId}}/pdf" data-action="pdf"><i class="fa fa-custom fa-file-pdf-o pdf" alt="Exportovať do PDF"></i></a>
-  <i class="fa fa-custom fa-times delete" data-action="delete-ziadanka" alt="Zmazať žiadanku"></i>
+  <a href="/ziadanky/{{this._id}}/edit" data-action="edit"><i class="fa fa-custom fa-pencil-square-o edit" alt="Upraviť"></i></a>
+  <a href="/ziadanky/{{this._id}}/nakup" data-action="nakup"><i class="fa fa-custom fa-cart-plus nakup" alt="Nákup"></i></a>
+  <a href="/ziadanky/{{this._id}}" data-action="nahlad-tlace"><i class="fa fa-custom fa-print nahlad" alt="Náhľad tlače"></i></a>
+  <a href="#" data-action="pdf"><i class="fa fa-custom fa-file-pdf-o pdf" alt="Exportovať do PDF"></i></a>
+  <a href="#" data-action="delete-ziadanka"><i class="fa fa-custom fa-times delete" alt="Zmazať žiadanku"></i></a>
 </template>

@@ -1,6 +1,5 @@
 FlowRouter.route('/ziadanky', {
   name: 'ziadanky',
-  triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: function(params) {
     BlazeLayout.render("appLayout", {area: "ziadanky"});
   }
@@ -8,7 +7,6 @@ FlowRouter.route('/ziadanky', {
 
 FlowRouter.route('/ziadanky/:_id', {
   name: 'ziadanka',
-  triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: function(params) {
     BlazeLayout.render("ziadankaTlac", {area: "ziadanka"});
   }
