@@ -1,0 +1,8 @@
+<template name="ziadatelSelect">
+  <select name="ziadatel" id="ziadatel" class="form-control {{#if ziadatelError}}has-error{{/if}}" style="width: 100%">
+    <option disabled selected>--- Vyberte žiadateľa zo zoznamu ---</option>
+    {{#each this}}
+    <option value="{{_id}}">{{titulPred}} {{meno}} {{priezvisko}}, {{titulZa}} ({{utvar}})</option>
+    {{/each}}
+  </select>
+</template>

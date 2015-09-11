@@ -20,6 +20,10 @@ Package.onUse(function(api) {
 
   // Client files
   api.addFiles([
+    'lib/client/poziadavka-formular.html',
+    'lib/client/poziadavka-formular.js',
+    'lib/client/ziadatel-select.html',
+    'lib/client/ziadatel-select.js',
     'lib/client/status-ziadanka.html',
     'lib/client/status-ziadanka.js',
     'lib/client/table-ziadanka-tools.html',
