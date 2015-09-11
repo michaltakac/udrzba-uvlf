@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-xs-6">
         <h1>Údržba UVLF</h1>
-        <h3><small>Žiadanka na opravu alebo údržbu</small></h3>        
+        <h3><small>Žiadanka na opravu alebo údržbu</small></h3>
       </div>
       <div class="col-xs-6 text-right">
         <h3>{{ziadanka.cislo}}</h3>
@@ -19,11 +19,11 @@
             <h4>Žiadateľ</h4>
           </div>
           <div class="panel-body">
-            <p><strong>Meno:</strong> {{ziadatelInfo.titulPred}} {{ziadatelInfo.meno}} {{ziadatelInfo.priezvisko}}{{#if ziadatelInfo.titulZa}}, {{ziadatelInfo.titulZa}}{{/if}}</p>
-            <p><strong>Útvar/katedra/klinika:</strong> {{ziadatelInfo.utvar}}</p>
-            <p><strong>Pracovisko:</strong> {{ziadatelInfo.pracovisko}}</p>
-            <p><strong>Referát:</strong> {{ziadatelInfo.referat}}</p>
-            <p><strong>Email:</strong> <span style="color: #0D3B8A;">{{ziadatelInfo.email}}</span></p>
+            <p><strong>Meno:</strong> {{ziadanka.ziadatelInfo_titulPred}} {{ziadanka.ziadatelInfo_meno}} {{ziadanka.ziadatelInfo_priezvisko}}{{#if ziadanka.ziadatelInfo_titulZa}}, {{ziadanka.ziadatelInfo_titulZa}}{{/if}}</p>
+            <p><strong>Útvar/katedra/klinika:</strong> {{ziadanka.ziadatelInfo_utvar}}</p>
+            <p><strong>Pracovisko:</strong> {{ziadanka.ziadatelInfo_pracovisko}}</p>
+            <p><strong>Referát:</strong> {{ziadanka.ziadatelInfo_referat}}</p>
+            <p><strong>Email:</strong> <span style="color: #0D3B8A;">{{ziadanka.ziadatelInfo_email}}</span></p>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
                   <h4>Miesto</h4>
                 </div>
                 <div class="panel-body">
-                  <p>{{this.miesto}}</p>
+                  <p>{{ziadanka.miesto}}</p>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@
                   <h4>Predmet požiadavky</h4>
                 </div>
                 <div class="panel-body">
-                  <p>{{this.sprava}}</p>
+                  <p>{{ziadanka.sprava}}</p>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@
       <div class="col-md-12">
         <label class="col-sm-3 control-label">Súpis dodávok</label>
         <div class="col-sm-9">
-          {{this.supisDodavok}}
+          {{ziadanka.supisDodavok}}
         </div>
       </div>
     </div>
@@ -81,11 +81,11 @@
       </div>
       <div class="col-md-6">
         <p>
-          <strong>Dátum vystavenia:</strong> {{this.createdAt}} <br>
-          <strong>Začatie prác:</strong> {{this.zacatiePrac}} <br>
-          <strong>Ukončenie prác:</strong> {{this.ukonceniePrac}} <br>
-          <strong>Priorita:</strong> {{this.priorita}} <br>
-          <strong>Pridelený pracovník:</strong> {{this.pridelenyPracovnik}}
+          <strong>Dátum vystavenia:</strong> {{ziadanka.createdAt}} <br>
+          <strong>Začatie prác:</strong> {{ziadanka.zacatiePrac}} <br>
+          <strong>Ukončenie prác:</strong> {{ziadanka.ukonceniePrac}} <br>
+          <strong>Priorita:</strong> {{ziadanka.priorita}} <br>
+          <strong>Pridelený pracovník:</strong> {{ziadanka.pridelenyPracovnik}}
         </p>
       </div>
     </div>
