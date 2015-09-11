@@ -36,8 +36,6 @@ Package.onUse(function(api) {
     'lib/client/layouts/appLayout.html',
     'lib/client/layouts/loading.html',
     'lib/client/layouts/notFound.html',
-    //'lib/client/buttons.html',
-    //'lib/client/buttons.js',
   ], 'client');
 
   // Routing
@@ -83,8 +81,7 @@ Package.onUse(function(api) {
     'SimpleSchema',
     'TabularTables',
     'Schemas',
-    'Bert',
-    'Picker'
+    'Bert'
   ]);
 
 });

@@ -24,6 +24,8 @@ Package.onUse(function(api) {
     'lib/client/status-ziadanka.js',
     'lib/client/table-ziadanka-tools.html',
     'lib/client/table-ziadanka-tools.js',
+    'lib/client/ziadanka-settings.html',
+    'lib/client/ziadanka-settings.js',
     'lib/client/ziadanky.html',
     'lib/client/ziadanky.js',
     'lib/client/ziadanka.html',

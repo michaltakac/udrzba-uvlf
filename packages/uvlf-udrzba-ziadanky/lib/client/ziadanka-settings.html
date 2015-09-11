@@ -1,0 +1,39 @@
+<template name="ziadankaSettings">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Dátum vystavenia -->
+      <div class="form-group">
+        <label for="createdAt">Dátum vystavenia:</label>
+        <input type="text" name="createdAt" id="createdAt" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{fullTime this.createdAt}}" disabled>
+      </div>
+      <!-- Termín začatia prác -->
+      <div class="form-group">
+        <label for="zacatiePrac">Termín začatia prác:</label>
+        <input type="text" name="zacatiePrac" id="zacatiePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{#if this.zacatiePrac}}{{this.zacatiePrac}}{{/if}}">
+      </div>
+      <!-- Termín ukončenia prác -->
+      <div class="form-group">
+        <label for="ukonceniePrac">Termín ukončenia prác:</label>
+        <input type="text" name="ukonceniePrac" id="ukonceniePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{#if this.ukonceniePrac}}{{this.ukonceniePrac}}{{/if}}">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Priorita -->
+      <div class="form-group">
+        <label for="priorita">Priorita:</label>
+        <select type="text" name="priorita" id="priorita" class="form-control">
+          <option value="Nízka">Nízka</option>
+          <option value="Bežná">Bežná</option>
+          <option value="Vysoká">Vysoká</option>
+          <option value="Havarijná">Havarijná</option>
+        </select>
+      </div>
+      <!-- Pridelený pracovník -->
+      <div class="form-group">
+        <label for="pridelenyPracovnik">Pridelený pracovník:</label>
+        <input type="text" name="pridelenyPracovnik" id="pridelenyPracovnik" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{#if this.pridelenyPracovnik}}{{this.pridelenyPracovnik}}{{/if}}">
+      </div>
+    </div>
+  </div>
+</template>

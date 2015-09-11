@@ -45,11 +45,9 @@ Package.onUse(function(api) {
     'natestrauser:select2',
     'aldeed:autoform-select2',
     'numeral:numeral',
-    'aldeed:autoform-bs-datetimepicker',
-    'aldeed:autoform-bs-datepicker',
-    'tsega:bootstrap3-datetimepicker@0.3.0',
-    'rajit:bootstrap3-datepicker',
     'aldeed:tabular',
+    'rajit:bootstrap3-datepicker',
+    'rajit:bootstrap3-datepicker-sk',
     'meteorhacks:picker@1.0.3',
     'msavin:mongol'
   ];
