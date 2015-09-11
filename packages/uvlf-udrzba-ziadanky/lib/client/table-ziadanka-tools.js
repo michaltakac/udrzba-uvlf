@@ -29,10 +29,6 @@ Template.tableZiadankaTools.helpers({
 });
 
 Template.tableZiadankaTools.events({
-  'click [data-action="pdf"]': function(e) {
-    e.preventDefault();
-    FlowRouter.go('/ziadanky/'+this._id+'/pdf');
-  },
   'click [data-action="delete-ziadanka"]': function (e) {
     e.preventDefault();
     var confirmDelete = confirm('Naozaj chcete odstrániť žiadanku?');
