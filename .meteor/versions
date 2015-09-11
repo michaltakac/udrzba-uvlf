@@ -57,7 +57,6 @@ meteorhacks:meteorx@1.0.2
 meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.2
 meteorhacks:unblock@1.1.0
-meteortoys:allthings@0.1.0
 meteortoys:toykit@0.2.2
 mfactory:admin-lte@0.0.2
 minifiers@1.1.5
@@ -67,9 +66,8 @@ momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
 mrt:underscore-string-latest@2.3.3
-msavin:jetsetter@0.1.1
 msavin:mongol@1.0.12
-natestrauser:select2@3.2.1
+natestrauser:select2@4.0.0
 npm-bcrypt@0.7.8_2
 numeral:numeral@1.5.3
 observe-sequence@1.0.6

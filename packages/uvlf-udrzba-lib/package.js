@@ -51,7 +51,7 @@ Package.onUse(function(api) {
     'rajit:bootstrap3-datepicker',
     'aldeed:tabular',
     'meteorhacks:picker@1.0.3',
-    'meteortoys:allthings'
+    'msavin:mongol'
   ];
 
   api.use(packages);
