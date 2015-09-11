@@ -12,7 +12,7 @@ aldeed:template-extension@3.4.3
 anti:fake@0.4.1
 arillo:flow-router-helpers@0.4.5
 autoupdate@1.2.1
-babrahams:editable-json@0.4.3
+babrahams:editable-json@0.3.13
 base64@1.0.3
 binary-heap@1.0.3
 blaze@2.1.2
@@ -57,7 +57,8 @@ meteorhacks:meteorx@1.0.2
 meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.2
 meteorhacks:unblock@1.1.0
-meteortoys:toykit@0.8.7
+meteortoys:allthings@0.1.0
+meteortoys:toykit@0.2.2
 mfactory:admin-lte@0.0.2
 minifiers@1.1.5
 minimongo@1.0.8
@@ -66,7 +67,8 @@ momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
 mrt:underscore-string-latest@2.3.3
-msavin:mongol@1.1.5
+msavin:jetsetter@0.1.1
+msavin:mongol@1.0.12
 natestrauser:select2@3.2.1
 npm-bcrypt@0.7.8_2
 numeral:numeral@1.5.3

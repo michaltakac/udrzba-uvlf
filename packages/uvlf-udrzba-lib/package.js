@@ -50,7 +50,8 @@ Package.onUse(function(api) {
     'tsega:bootstrap3-datetimepicker@0.3.0',
     'rajit:bootstrap3-datepicker',
     'aldeed:tabular',
-    'meteorhacks:picker@1.0.3'
+    'meteorhacks:picker@1.0.3',
+    'meteortoys:allthings'
   ];
 
   api.use(packages);
