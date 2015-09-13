@@ -6,12 +6,12 @@ Template.ziadanka.onCreated(function () {
   });
 });
 
+Template.ziadanka.onRendered(function() {
+
+});
+
 Template.ziadanka.helpers({
   ziadanka: function() {
     return Ziadanky.findOne();
-  },
-  ziadatelInfo: function() {
-    var ziadatel = Ziadanky.findOne().ziadatelInfo[0];
-    return ziadatel;
   }
 });

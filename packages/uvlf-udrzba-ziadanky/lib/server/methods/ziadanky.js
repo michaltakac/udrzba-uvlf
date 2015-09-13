@@ -30,5 +30,18 @@ Meteor.methods({
     };
 
     Ziadanky.insert(nova);
+  },
+  ulozitZiadanku: function(inputs, id) {
+    check(inputs, {
+      zacatiePrac:   String,
+      ukonceniePrac: String,
+      priorita:      String,
+      pridelenyPracovnik: Array,
+      supisDodavok: Array
+    });
+
+    Ziadanky.update(id, {
+      $set: inputs
+    });
   }
 });

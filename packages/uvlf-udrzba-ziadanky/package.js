@@ -30,6 +30,8 @@ Package.onUse(function(api) {
     'lib/client/table-ziadanka-tools.js',
     'lib/client/ziadanka-settings.html',
     'lib/client/ziadanka-settings.js',
+    'lib/client/ziadanka-edit-form.html',
+    'lib/client/ziadanka-edit-form.js',
     'lib/client/ziadanky.html',
     'lib/client/ziadanky.js',
     'lib/client/ziadanka.html',

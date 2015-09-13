@@ -184,12 +184,13 @@ Schemas.Ziadanky = new SimpleSchema({
     optional: true
   },
   supisDodavok: {
-    type: String,
+    type: Array,
     label: 'Súpis dodávok',
     optional: true,
-    autoform: {
-      rows: 6
-    }
+  },
+  'supisDodavok.$': {
+    type: String,
+    optional: true,
   },
   priorita: {
     type: String,
@@ -208,8 +209,12 @@ Schemas.Ziadanky = new SimpleSchema({
     }
   },
   pridelenyPracovnik: {
-    type: String,
+    type: Array,
     label: 'Práce vykonal / pridelené',
+    optional: true
+  },
+  'pridelenyPracovnik.$': {
+    type: String,
     optional: true
   },
   status: {
