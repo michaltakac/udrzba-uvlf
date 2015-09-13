@@ -1,0 +1,3 @@
+Template.sklad.onCreated(function () {
+
+});
