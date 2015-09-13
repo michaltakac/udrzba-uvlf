@@ -31,7 +31,7 @@ Package.onUse(function(api) {
     'themeteorchef:bert',
     'meteorhacks:subs-manager@1.6.2',
     'cmather:handlebars-server@0.2.0',
-    'dburles:collection-helpers',
+    'dburles:collection-helpers@1.0.3',
     'reywood:publish-composite@1.3.3',
     'momentjs:moment@2.10.6',
     'mrt:underscore-string-latest',
@@ -43,13 +43,13 @@ Package.onUse(function(api) {
     'yasinuslu:blaze-meta',
     'fortawesome:fontawesome',
     'natestrauser:select2',
-    'aldeed:autoform-select2',
+    //'aldeed:autoform-select2',
     'numeral:numeral',
     'aldeed:tabular',
     'rajit:bootstrap3-datepicker',
     'rajit:bootstrap3-datepicker-sk',
     'meteorhacks:picker@1.0.3',
-    'msavin:mongol'
+    //'msavin:mongol'
   ];
 
   api.use(packages);
