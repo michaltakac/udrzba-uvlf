@@ -19,6 +19,7 @@ Package.onUse(function(api) {
     'uvlf:udrzba-pracovnici',
     'uvlf:udrzba-ziadanky',
     'uvlf:udrzba-nakupy',
+    'uvlf:udrzba-sklad',
     'uvlf:udrzba-generate-pdf'
   ], ['client', 'server']);
 

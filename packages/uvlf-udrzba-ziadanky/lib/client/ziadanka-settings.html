@@ -9,12 +9,12 @@
       <!-- Termín začatia prác -->
       <div class="form-group">
         <label for="zacatiePrac">Termín začatia prác:</label>
-        <input type="text" name="zacatiePrac" id="zacatiePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{#if this.zacatiePrac}}{{this.zacatiePrac}}{{/if}}">
+        <input type="text" name="zacatiePrac" id="zacatiePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}">
       </div>
       <!-- Termín ukončenia prác -->
       <div class="form-group">
         <label for="ukonceniePrac">Termín ukončenia prác:</label>
-        <input type="text" name="ukonceniePrac" id="ukonceniePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{#if this.ukonceniePrac}}{{this.ukonceniePrac}}{{/if}}">
+        <input type="text" name="ukonceniePrac" id="ukonceniePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}">
       </div>
     </div>
 
@@ -33,6 +33,13 @@
       <div class="form-group">
         <label for="pridelenyPracovnik">Pridelený pracovník:</label>
         <select name="pridelenyPracovnik" id="pridelenyPracovnik" class="form-control" multiple="multiple"></select>
+        {{#if pracovnici}}
+          <ul>
+          {{#each pracovnici}}
+            <li><button class="btn btn-danger" data-event="delete-pracovnik">X</button> {{this}}</li>
+          {{/each}}
+          </ul>
+        {{/if}}
       </div>
     </div>
   </div>
