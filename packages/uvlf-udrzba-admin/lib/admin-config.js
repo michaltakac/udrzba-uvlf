@@ -1,4 +1,6 @@
 AdminConfig = {
+  name: 'Údržba UVLF',
+  adminEmails: ['takacmichal92@gmail.com'],
   nonAdminRedirectRoute: 'entrySignIn',
   collections: {
     Pracovnici: {

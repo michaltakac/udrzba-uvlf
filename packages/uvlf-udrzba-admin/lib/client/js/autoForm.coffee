@@ -25,7 +25,7 @@ AutoForm.hooks
 						hook.done null, collection
 			return false
 		onSuccess: (formType, collection)->
-			AdminDashboard.alertSuccess 'Successfully created'
+			AdminDashboard.alertSuccess 'Úspešne vytvorené'
 			FlowRouter.go "/admin/view/#{collection}"
 
 	admin_update:
@@ -39,23 +39,23 @@ AutoForm.hooks
 						hook.done null, collection
 			return false
 		onSuccess: (formType, collection)->
-			AdminDashboard.alertSuccess 'Successfully updated'
+			AdminDashboard.alertSuccess 'Úspešne aktualizované'
 
 	adminNewUser:
 		onSuccess: (formType, result)->
-			AdminDashboard.alertSuccess 'Created user'
+			AdminDashboard.alertSuccess 'Vytvoriť užívateľa'
 
 	adminUpdateUser:
 		onSubmit: (insertDoc, updateDoc, currentDoc)->
 			Meteor.call 'adminUpdateUser', updateDoc, Session.get('admin_id'), @done
 			return false
 		onSuccess: (formType, result)->
-			AdminDashboard.alertSuccess 'Updated user'
+			AdminDashboard.alertSuccess 'Aktualizovaný užívateľ'
 
 	adminSendResetPasswordEmail:
 		onSuccess: (formType, result)->
-			AdminDashboard.alertSuccess 'Email sent'
+			AdminDashboard.alertSuccess 'Email odoslaný'
 
 	adminChangePassword:
 		onSuccess: (operation, result, template)->
-			AdminDashboard.alertSuccess 'Password reset'
+			AdminDashboard.alertSuccess 'Heslo zresetované'

@@ -166,8 +166,12 @@ Schemas.Ziadanky = new SimpleSchema({
     type: String,
     label: 'Predmet požiadavky',
     autoform: {
-      rows: 8
+      rows: 6
     }
+  },
+  predmet: {
+    type: String,
+    label: 'Predmet'
   },
   miesto: {
     type: String,
@@ -217,14 +221,29 @@ Schemas.Ziadanky = new SimpleSchema({
     type: String,
     optional: true
   },
-  status: {
-    type: String,
+  vybavena: {
+    type: Boolean,
     label: 'Vybavené?',
+    autoValue: function() {
+      if (this.isInsert) {
+        return false;
+      }
+    },
     optional: true
   },
   nakupId: {
     type: String,
     label: 'Nákup',
+    optional: true
+  },
+  archived: {
+    type: Boolean,
+    label: 'Archivované?',
+    autoValue: function() {
+      if (this.isInsert) {
+        return false;
+      }
+    },
     optional: true
   },
   createdAt: {

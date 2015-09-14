@@ -54,18 +54,18 @@ AdminDashboard =
 AdminDashboard.schemas.newUser = new SimpleSchema
 	email: 
 		type: String
-		label: "Email address"
+		label: "Emailová adresa"
 	chooseOwnPassword:
 		type: Boolean
-		label: 'Let this user choose their own password with an email'
+		label: 'Nechať užívateľa zvoliť si vlastné heslo'
 		defaultValue: true
 	password:
 		type: String
-		label: 'Password'
+		label: 'Heslo'
 		optional: true
 	sendPassword:
 		type: Boolean
-		label: 'Send this user their password by email'
+		label: 'Poslať uživateľovi vygenerované heslo na mail'
 		optional: true
 
 AdminDashboard.schemas.sendResetPasswordEmail = new SimpleSchema

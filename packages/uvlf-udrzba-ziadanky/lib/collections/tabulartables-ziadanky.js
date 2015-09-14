@@ -9,18 +9,14 @@ TabularTables.Ziadanky = new Tabular.Table({
   columns: [
     {data: "createdAt", title: "Dátum", class: "col-md-1",
       render: function (val, type, doc) {
-        if (val instanceof Date) {
-          return moment(val).format("DD.MM.YYYY");
-        } else {
-          return val;
-        }
+        return moment(val).format("DD.MM.YYYY");
       }
     },
     {data: "cislo", title: "Číslo žiadanky", class: "col-md-2"},
     {data: "ziadatelInfo_priezvisko", title: "Priezvisko", class: "col-md-2"},
-    {data: "sprava", title: "Správa"},
-    {
-      tmpl: Meteor.isClient && Template.statusZiadanka, class: "col-md-1 status-column"
+    {data: "predmet", title: "Predmet"},
+    {data: "vybavena", title: "Status", class: "col-md-1 status-column",
+      tmpl: Meteor.isClient && Template.statusZiadanka
     },
     {
       tmpl: Meteor.isClient && Template.tableZiadankaTools, class: "col-md-2"

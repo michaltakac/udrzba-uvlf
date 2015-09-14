@@ -2,7 +2,6 @@ Template.ziadanky.onCreated(function () {
   /*var self = this;
 
   self.autorun(function() {
-    self.subscribe('pracovnici');
     self.subscribe('ziadanky');
   });*/
 });
@@ -13,7 +12,7 @@ Template.ziadanky.onRendered(function() {
 
 Template.ziadanky.helpers({
   selector: function () {
-    return { archived: "false" }; // this could be pulled from a Session var or something that is reactive
+    return { archived: false }; // this could be pulled from a Session var or something that is reactive
   }
 });
 

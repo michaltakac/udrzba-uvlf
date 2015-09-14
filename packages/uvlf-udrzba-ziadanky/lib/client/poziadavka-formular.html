@@ -3,44 +3,30 @@
   <form id="formular-poziadavka">
     <!-- Ziadatel -->
     <div class="form-group">
-      <label for="ziadatel">Žiadateľ:</label>
-      {{#if ziadatel}}
-        {{#with ziadatel}}
-          {{> ziadatelSelect}}
-        {{/with}}
-      {{/if}}
+      <div class="ziadatel-info" style="margin-top: 15px;">
+        <p>
+          <strong>Žiadateľ:</strong> {{currentUser.profile.titulPred}} {{currentUser.profile.meno}} {{currentUser.profile.priezvisko}}{{#if currentUser.profile.titulZa}}, {{currentUser.profile.titulZa}}{{/if}}<br><br>
 
-      {{#if ziadatelError}}
-      <span class="help-block">Vyberte žiadateľa podľa mena.</span>
-      {{/if}}
-
-      {{#if ziadatelInfo}}
-        {{#with ziadatelInfo}}
-          <div class="ziadatel-info" style="margin-top: 15px;">
-            <p>
-              <strong>Útvar/katedra/klinika:</strong> {{utvar}}<br>
-              <strong>Pracovisko:</strong> {{pracovisko}}<br>
-              <strong>Referát:</strong> {{referat}}
-            </p>
-          </div>
-        {{/with}}
-      {{/if}}
+          <strong>Útvar/katedra/klinika:</strong> {{currentUser.profile.utvar}}<br>
+          <strong>Pracovisko:</strong> {{currentUser.profile.pracovisko}}<br>
+          <strong>Referát:</strong> {{currentUser.profile.referat}}
+        </p>
+      </div>
     </div>
     <!-- Miesto -->
     <div class="form-group">
       <label for="miesto">Miesto:</label>
-      <input type="text" name="miesto" id="miesto" class="form-control {{#if miestoError}}has-error{{/if}}" placeholder='napr. "Pavilón 25"'>
-      {{#if miestoError}}
-      <span class="help-block">Vyplňte miesto poruchy.</span>
-      {{/if}}
+      <input type="text" name="miesto" id="miesto" class="form-control {{#if miestoError}}has-error{{/if}}" placeholder='Miesto poruchy'>
+    </div>
+    <!-- Predmet -->
+    <div class="form-group">
+      <label for="predmet">Predmet požiadavky:</label>
+      <input type="text" name="predmet" id="predmet" class="form-control {{#if miestoError}}has-error{{/if}}">
     </div>
     <!-- Sprava -->
     <div class="form-group">
-      <label for="sprava">Predmet požiadavky:</label>
+      <label for="sprava">Správa:</label>
       <textarea name="sprava" id="sprava" class="form-control {{#if spravaError}}has-error{{/if}}" rows="5" placeholder='Správa s popisom poruchy' style="resize: vertical;"></textarea>
-      {{#if spravaError}}
-      <span class="help-block">Vyplňte predmet požiadavky.</span>
-      {{/if}}
     </div>
 
     <button type="submit" class="btn btn-success pull-right">Odoslať požiadavku</button>

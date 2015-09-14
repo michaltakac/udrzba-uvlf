@@ -16,14 +16,14 @@
       <div class="collapse navbar-collapse" id="main-nav">
         {{#if currentUser}}
           <ul class="nav navbar-nav navbar-right">
+            {{#if isInRole 'admin'}}
             <li class=""><a href="/ziadanky">Zoznam žiadaniek</a></li>
             <li class=""><a href="/nakupy">Zoznam nákupov</a></li>
-            {{#if isInRole 'admin'}}
             <li class=""><a href="/admin"><i class="fa fa-users"></i> Administrácia</a></li>
             {{/if}}
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-user"></i> {{ currentUser.profile.name }} <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user"></i> {{currentUser.profile.titulPred}} {{currentUser.profile.meno}} {{currentUser.profile.priezvisko}}{{#if currentUser.profile.titulZa}}, {{currentUser.profile.titulZa}}{{/if}} <i class="fa fa-caret-down"></i>
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#" data-action="logout"><i class="fa fa-lock"></i> Odhlásenie</a></li>

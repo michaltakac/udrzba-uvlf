@@ -31,17 +31,20 @@ Template.tableZiadankaTools.helpers({
 Template.tableZiadankaTools.events({
   'click [data-action="delete-ziadanka"]': function (e) {
     e.preventDefault();
-    var confirmDelete = confirm('Naozaj chcete odstrániť žiadanku?');
-    if (confirmDelete) {
+    var ziadanka = Ziadanky.findOne(this._id);
+    var confirmDelete = confirm('Naozaj chcete archivovať žiadanku?');
+    if (ziadanka.vybavena === true && confirmDelete) {
       Ziadanky.update(this._id, {
         $set: { archived: true }
       }, function(error) {
         if (error) {
-          Bert.alert("Žiadanka sa nepodarilo archivovať.", 'danger', 'growl-top-right');
+          Bert.alert('Žiadanku sa nepodarilo archivovať.', 'danger', 'growl-top-right');
         } else {
           Bert.alert("Žiadanka bola archivovaná.", 'success', 'growl-top-right');
         }
       });
+    } else {
+      Bert.alert('Skontrolujte, či je žiadanka vybavená. Žiadanky bez tohto statusu nie je možné archivovať!', 'danger', 'growl-top-right');
     }
   }
 });

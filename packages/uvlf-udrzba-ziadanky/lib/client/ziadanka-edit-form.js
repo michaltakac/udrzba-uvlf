@@ -39,5 +39,20 @@ Template['ziadanka_edit_form'].events({
   'click [data-event="delete-dodavka"]': function(e) {
     e.preventDefault();
     console.log($(e.target).val());
+  },
+  'click #vybavena': function(e) {
+    var ziadankaId = FlowRouter.getParam('_id');
+    var status = $(e.currentTarget).is(":checked");
+    Session.set("statevalue", status);
+
+    Ziadanky.update(ziadankaId, {
+      $set: { vybavena: Session.get("statevalue") }
+    }, function(error) {
+      if (error) {
+        Bert.alert('Status žiadanky sa nepodarilo aktualizovať.', 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("Status žiadanky bol aktualizovaný.", 'success', 'growl-top-right');
+      }
+    });
   }
 });

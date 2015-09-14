@@ -51,7 +51,8 @@ Package.onUse(function(api) {
     'lib/server/email/templates/404.handlebars',
     'lib/server/email/templates/contactEmail.handlebars',
     'lib/server/email/config.js',
-    'lib/server/account-urls.js'
+    'lib/server/account-urls.js',
+    'lib/server/seed-accounts.js'
   ], 'server');
 
   // both

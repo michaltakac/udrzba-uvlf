@@ -2,7 +2,7 @@
   <form id="ziadanka-edit">
     <div class="row">
       <div class="col-md-6">
-        <h3 class="form-title">Žiadanka č.: {{ziadanka.cislo}}</h3>
+        <h3 class="form-title" style="{{#if equals ziadanka.vybavena true}}color: #34b93d;{{/if}}">Žiadanka č.: {{ziadanka.cislo}}</h3>
         <div class="ziadatel-info">
           <p>
             <strong>Útvar/katedra/klinika:</strong> {{ziadanka.ziadatelInfo_utvar}}<br>
@@ -16,16 +16,21 @@
           </p>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" style="margin-top:20px;">
         <!-- Miesto -->
-        <div class="form-group">
+        <div>
           <label for="miesto">Miesto:</label>
-          <input type="text" name="miesto" id="miesto" class="form-control {{#if miestoError}}has-error{{/if}}" value="{{ziadanka.miesto}}">
+          <p>{{ziadanka.miesto}}</p>
+        </div>
+        <!-- Predmet -->
+        <div>
+          <label for="predmet">Predmet žiadanky:</label>
+          <p>{{ziadanka.predmet}}</p>
         </div>
         <!-- Sprava -->
-        <div class="form-group">
-          <label for="sprava">Predmet požiadavky:</label>
-          <textarea name="sprava" id="sprava" class="form-control {{#if spravaError}}has-error{{/if}}" rows="5" value="{{ziadanka.sprava}}"></textarea>
+        <div>
+          <label for="sprava">Sprava:</label>
+          <p>{{ziadanka.sprava}}</p>
         </div>
       </div>
     </div>
@@ -69,23 +74,24 @@
     <hr>
 
     <div class="row">
-      <div class="col-md-12">
-      {{#if equals status "TRUE"}}
-        <h3>Táto požiadavka bola vybavená!</h3>
+      <div class="col-md-12 text-center">
+      {{#if ziadanka.vybavena}}
+        <h3 style="color: #34b93d;">Táto požiadavka bola vybavená!</h3>
       {{else}}
-        <h3>Zaškrtnite, ak považujete požiadavku za vybavenú:</h3>
-        <!-- Status -->
-        <div class="form-group">
-          <div class="col-sm-9 pull-right">
-            <input type="checkbox" name="status">
-          </div>
-        </div>
+        <h3>Zaškrtnite, ak považujete požiadavku za vybavenú</h3>
       {{/if}}
-        <p class="pull-right">
+        <!-- Status -->
+        <div class="form-group" style="margin-top:30px;">
+            <input type="checkbox" id="vybavena" data-checkbox="animated" checked="{{#if ziadanka.vybavena}}true{{/if}}">
+            <label for="vybavena" class="check-box"></label>
+        </div>
+        <hr>
+        <p class="text-center">
           <a href="/ziadanky" class="btn btn-default">Späť na zoznam žiadaniek</a>
           <button type="submit" class="btn btn-success">Uložiť</button>
         </p>
       </div>
     </div>
   </form>
+  <hr>
 </template>

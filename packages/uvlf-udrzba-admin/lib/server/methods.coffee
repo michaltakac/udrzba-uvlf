@@ -44,8 +44,8 @@ Meteor.methods
 					Email.send
 						to: user.email
 						from: AdminConfig.fromEmail
-						subject: 'Your account has been created'
-						html: 'You\'ve just had an account created for ' + Meteor.absoluteUrl() + ' with password ' + doc.password
+						subject: 'Váš účet bol vytvorený'
+						html: 'Váš účet na webe ' + Meteor.absoluteUrl() + ' bol vytvorený s heslom ' + doc.password
 
 				if not doc.sendPassword
 					Accounts.sendEnrollmentEmail _id
@@ -62,15 +62,15 @@ Meteor.methods
 	adminSendResetPasswordEmail: (doc)->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			console.log 'Changing password for user ' + doc._id
+			console.log 'Zmena hesla pre užívateľa ' + doc._id
 			Accounts.sendResetPasswordEmail(doc._id)
 
 	adminChangePassword: (doc)->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			console.log 'Changing password for user ' + doc._id
+			console.log 'Zmena hesla pre užívateľa ' + doc._id
 			Accounts.setPassword(doc._id, doc.password)
-			label: 'Email user their new password'
+			label: 'Poslať užívateľovi jeho nové heslo'
 
 	adminCheckAdmin: ->
 		check arguments, [Match.Any]

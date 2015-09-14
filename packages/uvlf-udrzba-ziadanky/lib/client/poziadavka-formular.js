@@ -7,7 +7,7 @@ Template.poziadavkaFormular.onCreated(function () {
 Template.poziadavkaFormular.onRendered(function() {
   $('#formular-poziadavka').validate({
     rules: {
-      ziadanka: {
+      predmet: {
         required: true
       },
       miesto: {
@@ -18,20 +18,21 @@ Template.poziadavkaFormular.onRendered(function() {
       }
     },
     messages: {
-      ziadanka: {
-        required: "Vyberte žiadateľa podľa mena."
+      predmet: {
+        required: "Vyplňte predmet požiadavky."
       },
       miesto: {
         required: "Vyplňte miesto poruchy."
       },
       sprava: {
-        required: "Vyplňte predmet požiadavky."
+        required: "Vyplňte správu požiadavky."
       }
     },
     submitHandler: function() {
       var ziadanka = {
-        ziadatelId: $('#ziadatel').val(),
+        ziadatelId: Meteor.userId(),
         miesto: $('#miesto').val(),
+        predmet: $('#predmet').val(),
         sprava: $('#sprava').val()
       };
 

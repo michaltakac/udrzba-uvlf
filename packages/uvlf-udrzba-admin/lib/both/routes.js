@@ -1,4 +1,3 @@
-
 var fadminRoutes = FlowRouter.group({
   name: "AdminController",
   prefix: '/admin',
@@ -7,7 +6,7 @@ var fadminRoutes = FlowRouter.group({
     this.register('fadminUser', Meteor.subscribe('adminUser'));
     this.register('fadminCollectionsCount', Meteor.subscribe('adminCollectionsCount'));
   },
- triggersEnter: [
+  triggersEnter: [
   	function(context) {
   		if(!Roles.userIsInRole (Meteor.userId(),['admin']))
   		{
