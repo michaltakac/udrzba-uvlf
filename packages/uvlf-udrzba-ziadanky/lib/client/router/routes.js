@@ -5,6 +5,13 @@ FlowRouter.route('/ziadanky', {
   }
 });
 
+FlowRouter.route('/ziadanky/archiv', {
+  name: 'ziadankyArchiv',
+  action: function(params) {
+    BlazeLayout.render("appLayout", {area: "ziadankyArchiv"});
+  }
+});
+
 FlowRouter.route('/ziadanky/:_id', {
   name: 'ziadanka',
   action: function(params) {

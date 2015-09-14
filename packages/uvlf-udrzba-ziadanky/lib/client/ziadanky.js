@@ -23,3 +23,11 @@ Template.ziadanky.events({
     console.log(rowData.sprava);
   }
 });
+
+/* ------------------------------------------ */
+
+Template.ziadankyArchiv.helpers({
+  selector: function () {
+    return { archived: true }; // this could be pulled from a Session var or something that is reactive
+  }
+});
