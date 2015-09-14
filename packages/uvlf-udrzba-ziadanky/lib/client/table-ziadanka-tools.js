@@ -33,8 +33,15 @@ Template.tableZiadankaTools.events({
     e.preventDefault();
     var confirmDelete = confirm('Naozaj chcete odstrániť žiadanku?');
     if (confirmDelete) {
-      Ziadanky.remove(this._id);
-      Bert.alert("Žiadanka bola odstránená.", 'success', 'growl-top-right');
+      Ziadanky.update(this._id, {
+        $set: { archived: true }
+      }, function(error) {
+        if (error) {
+          Bert.alert("Žiadanka sa nepodarilo archivovať.", 'danger', 'growl-top-right');
+        } else {
+          Bert.alert("Žiadanka bola archivovaná.", 'success', 'growl-top-right');
+        }
+      });
     }
   }
 });

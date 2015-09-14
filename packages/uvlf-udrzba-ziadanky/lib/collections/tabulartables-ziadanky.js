@@ -20,7 +20,7 @@ TabularTables.Ziadanky = new Tabular.Table({
     {data: "ziadatelInfo_priezvisko", title: "Priezvisko", class: "col-md-2"},
     {data: "sprava", title: "Správa"},
     {
-      tmpl: Meteor.isClient && Template.statusZiadanka, class: "status-column"
+      tmpl: Meteor.isClient && Template.statusZiadanka, class: "col-md-1 status-column"
     },
     {
       tmpl: Meteor.isClient && Template.tableZiadankaTools, class: "col-md-2"
