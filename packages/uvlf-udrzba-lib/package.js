@@ -49,7 +49,8 @@ Package.onUse(function(api) {
     'aldeed:tabular@1.4.0',
     'rajit:bootstrap3-datepicker',
     'rajit:bootstrap3-datepicker-sk',
-    'meteorhacks:picker@1.0.3'
+    'meteorhacks:picker@1.0.3',
+    'chhib:selectize-bootstrap-3'
   ];
 
   api.use(packages);

@@ -7,11 +7,17 @@ Template['ziadanka_edit_form'].onRendered(function() {
   $('#ziadanka-edit').validate({
     ignore: null,
     submitHandler: function() {
+      var array = []
+      var pracovnici = $('#pridelenyPracovnik').val();
+      if(pracovnici.length > 0) {
+        array = pracovnici.split(',');
+      }
+
       var editedInputs = {
         zacatiePrac:   $('#zacatiePrac').val(),
         ukonceniePrac: $('#ukonceniePrac').val(),
         priorita:      $('#priorita').val(),
-        pridelenyPracovnik: $('#pridelenyPracovnik').val(),
+        pridelenyPracovnik: array,
         supisDodavok: $('#supisDodavok').val()
       };
       console.log(editedInputs);

@@ -5,7 +5,7 @@ Template.ziadankaSettings.onCreated(function () {
 Template.ziadankaSettings.onRendered(function() {
   var pracovnici = ['Niekto 1', 'Niekto 2', 'Niekto 3', 'Niekto 4'];
   var ziadanka = Ziadanky.findOne();
-  var selected = Ziadanky.findOne().pridelenyPracovnik;
+  Session.set('selected', Ziadanky.findOne().pridelenyPracovnik);
 
   $('[data-type="datepicker"]').datepicker({
     format: "dd.mm.yyyy",
@@ -15,39 +15,38 @@ Template.ziadankaSettings.onRendered(function() {
 
   $('#zacatiePrac').datepicker('setDate', ziadanka.zacatiePrac);
   $('#ukonceniePrac').datepicker('setDate', ziadanka.ukonceniePrac);
-  $.fn.select2.amd.require(
-    ['select2/data/array', 'select2/utils'],
-    function (ArrayData, Utils) {
-      function CustomData ($element, options) {
-        CustomData.__super__.constructor.call(this, $element, options);
+
+  $('#pridelenyPracovnik').selectize({
+    plugins: ['remove_button'],
+    delimiter: ',',
+    persist: false,
+    maxItems: null,
+    preload: true,
+    valueField: 'name',
+    labelField: 'name',
+    searchField: ['name', 'email'],
+    options: [
+      {_id: 'sdgsdfgsdfm7', name: 'Prvy Pracovnik'},
+      {_id: 'sdfg2sd4gsd4', name: 'Druhy Pracovnik'},
+      {_id: 'sdbnnf117ve7', name: 'Treti Pracovnik'}
+    ],
+    render: {
+      item: function(item, escape) {
+        return '<div>' +
+          (item.name ? '<span class="label" style="color: black;">' + escape(item.name) + '</span> ' : '') +
+        '</div>';
+      },
+      option: function(item, escape) {
+        return '<div>' +
+          '<span class="label" style="color: black;">' + escape(item.name) + '</span>' +
+        '</div>';
       }
-
-      Utils.Extend(CustomData, ArrayData);
-
-      CustomData.prototype.current = function (callback) {
-        var data = [];
-        var currentVal = selected;
-
-        if (!this.$element.prop('multiple')) {
-          currentVal = [currentVal];
-        }
-
-        for (var v = 0; v < currentVal.length; v++) {
-          data.push({
-            id: currentVal[v],
-            text: currentVal[v]
-          });
-        }
-
-        callback(data);
-      };
-
-      $("#pridelenyPracovnik").select2({
-        dataAdapter: CustomData,
-        data: pracovnici
-      });
+    },
+    load: function(query, callback) {
+      if(!query.length) return callback();
+      callback(Session.get('selected'));
     }
-  );
+  });
 
 });
 

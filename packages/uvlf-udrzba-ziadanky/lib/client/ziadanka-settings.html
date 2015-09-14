@@ -32,7 +32,7 @@
       <!-- Pridelený pracovník -->
       <div class="form-group">
         <label for="pridelenyPracovnik">Pridelený pracovník:</label>
-        <select name="pridelenyPracovnik" id="pridelenyPracovnik" class="form-control" multiple="multiple"></select>
+        <input name="pridelenyPracovnik" id="pridelenyPracovnik" data-values="{{ziadanka.pridelenyPracovnik}}">
         {{#if pracovnici}}
           <ul>
           {{#each pracovnici}}
