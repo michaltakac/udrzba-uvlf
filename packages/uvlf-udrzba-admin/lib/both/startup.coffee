@@ -84,6 +84,7 @@ adminCreateTables = (collections) ->
 			if column.template
 				createdCell = (node, cellData, rowData) ->
 					$(node).html ''
+					Blaze.render(Template[column.template], node)
 					Blaze.renderWithData(Template[column.template], {value: cellData, doc: rowData}, node)
 
 			data: column.name

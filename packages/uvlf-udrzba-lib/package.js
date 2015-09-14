@@ -43,7 +43,7 @@ Package.onUse(function(api) {
     'yasinuslu:blaze-meta',
     'fortawesome:fontawesome',
     'natestrauser:select2',
-    //'aldeed:autoform-select2',
+    'aldeed:autoform-select2',
     'numeral:numeral',
     'aldeed:tabular',
     'rajit:bootstrap3-datepicker',

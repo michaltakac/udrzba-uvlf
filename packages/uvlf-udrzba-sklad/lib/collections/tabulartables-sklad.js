@@ -1,4 +1,4 @@
-TabularTables.Sklad = new Tabular.Table({
+/*TabularTables.Sklad = new Tabular.Table({
   name: "Sklad",
   collection: Sklad,
   allow: function (userId) {
@@ -8,21 +8,6 @@ TabularTables.Sklad = new Tabular.Table({
   order: [[0, "desc"]],
   columns: [
     {data: "createdAt", title: "Dátum"},
-    {data: "cisloZiadanky", title: "Číslo žiadanky pre opravu"},
-    {
-      tmpl: Meteor.isClient && Template.statusNakup
-    },
-    {
-      tmpl: Meteor.isClient && Template.ziadankaLink
-    },
-    {
-      tmpl: Meteor.isClient && Template.editNakup
-    },
-    {
-      tmpl: Meteor.isClient && Template.tlacNakup
-    },
-    {
-      tmpl: Meteor.isClient && Template.deleteNakup
-    }
+    {data: "cisloZiadanky", title: "Číslo žiadanky pre opravu"}
   ]
-});
+});*/
