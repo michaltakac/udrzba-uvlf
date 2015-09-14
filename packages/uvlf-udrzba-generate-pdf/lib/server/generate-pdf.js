@@ -1,10 +1,11 @@
 Picker.route('/ziadanky/:_id/pdf', function(params, req, res, next) {
   var ziadankaId = params._id
+  var cislo      = Ziadanky.findOne(ziadankaId).cislo;
   var webshot    = Npm.require('webshot');
   var fs         = Npm.require('fs');
   var Future     = Npm.require('fibers/future');
   var fut        = new Future();
-  var fileName   = "ziadanka_" + ziadankaId + ".pdf";
+  var fileName   = "ziadanka_" + cislo + ".pdf";
   var url        = Meteor.absoluteUrl('ziadanky/' + ziadankaId);
 
   var options = {
