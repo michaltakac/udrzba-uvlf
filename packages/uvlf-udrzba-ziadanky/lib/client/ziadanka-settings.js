@@ -3,9 +3,15 @@ Template.ziadankaSettings.onCreated(function () {
 });
 
 Template.ziadankaSettings.onRendered(function() {
-  var pracovnici = ['Niekto 1', 'Niekto 2', 'Niekto 3', 'Niekto 4'];
   var ziadanka = Ziadanky.findOne();
-  Session.set('selected', Ziadanky.findOne().pridelenyPracovnik);
+  var pracovnici = ziadanka.pridelenyPracovnik;
+
+  var statsObj = _.map(pracovnici, function(name) {
+    return {
+      name: name
+    }
+  });
+  Session.set('selected', statsObj);
 
   $('[data-type="datepicker"]').datepicker({
     format: "dd.mm.yyyy",
@@ -42,12 +48,24 @@ Template.ziadankaSettings.onRendered(function() {
         '</div>';
       }
     },
-    load: function(query, callback) {
-      if(!query.length) return callback();
-      callback(Session.get('selected'));
+    load: function (query, callback) {
+      if (!query.length) return callback();
+      return callback();
+    },
+    onInitialize: function() {
+      var existingOptions = Session.get('selected');
+      var self = this;
+      if(Object.prototype.toString.call( existingOptions ) === "[object Array]") {
+        existingOptions.forEach( function (existingOption) {
+          self.addOption(existingOption);
+          self.addItem(existingOption[self.settings.valueField]);
+        });
+      } else if (typeof existingOptions === 'object') {
+        self.addOption(existingOptions);
+        self.addItem(existingOptions[self.settings.valueField]);
+      }
     }
   });
-
 });
 
 Template.ziadankaSettings.helpers({
