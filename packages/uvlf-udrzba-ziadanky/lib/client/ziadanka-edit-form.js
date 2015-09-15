@@ -21,7 +21,9 @@ Template['ziadanka_edit_form'].onRendered(function() {
         supisDodavok: $('#supisDodavok').val()
       };
       console.log(editedInputs);
-      Meteor.call('ulozitZiadanku', editedInputs, FlowRouter.getParam('_id'), function(error) {
+      Ziadanky.update(FlowRouter.getParam('_id'), {
+        $set: editedInputs
+      }, function(error) {
         if (error) {
           Bert.alert("Vyskytla sa chyba! Vyskúšajte uložiť žiadanku ešte raz. Ak problém pretrváva, obráťte sa prosím na administrátora.", 'danger', 'growl-top-right');
         } else {

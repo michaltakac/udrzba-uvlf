@@ -33,7 +33,7 @@ Meteor.methods({
 
     Ziadanky.insert(nova);
   },
-  ulozitZiadanku: function(inputs, id) {
+  /*ulozitZiadanku: function(inputs, id) {
     check(inputs, {
       zacatiePrac:   String,
       ukonceniePrac: String,
@@ -45,5 +45,5 @@ Meteor.methods({
     Ziadanky.update(id, {
       $set: inputs
     });
-  }
+  }*/
 });
