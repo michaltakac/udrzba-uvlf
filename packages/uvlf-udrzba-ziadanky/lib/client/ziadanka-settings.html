@@ -23,10 +23,9 @@
       <div class="form-group">
         <label for="priorita">Priorita:</label>
         <select type="text" name="priorita" id="priorita" class="form-control">
-          <option value="Nízka">Nízka</option>
-          <option value="Bežná">Bežná</option>
-          <option value="Vysoká">Vysoká</option>
-          <option value="Havarijná">Havarijná</option>
+        {{#each options}}
+          <option value="{{value}}" selected="{{#if equals value ziadanka.priorita}}true{{/if}}">{{text}}</option>
+        {{/each}}
         </select>
       </div>
       <!-- Pridelený pracovník -->

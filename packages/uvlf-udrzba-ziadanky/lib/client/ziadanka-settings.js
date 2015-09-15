@@ -71,6 +71,26 @@ Template.ziadankaSettings.onRendered(function() {
 Template.ziadankaSettings.helpers({
   ziadanka: function() {
     return Ziadanky.findOne();
+  },
+  options:function(){
+    return [
+      {
+        value:"Nízka",
+        text:"Nízka"
+      },
+      {
+        value:"Bežná",
+        text:"Bežná"
+      },
+      {
+        value:"Vysoká",
+        text:"Vysoká"
+      },
+      {
+        value:"Havarijná",
+        text:"Havarijná"
+      }
+    ];
   }
 });
 
