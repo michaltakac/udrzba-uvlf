@@ -45,6 +45,8 @@ Package.onUse(function(api) {
 
   // both
   api.addFiles([
+    'lib/collections/vydajky-schema.js',
+    'lib/collections/vydajky-collection.js',
     'lib/collections/ziadanky-schema.js',
     'lib/collections/ziadanky-collection.js',
     'lib/collections/ziadanky-collection-helpers.js',
@@ -53,6 +55,8 @@ Package.onUse(function(api) {
 
   // Server files
   api.addFiles([
+    'lib/server/publications/vydajky.js',
+    'lib/server/permissions/vydajky.js',
     'lib/server/publications/ziadanky.js',
     'lib/server/permissions/ziadanky.js',
     'lib/server/methods/ziadanky.js'
@@ -64,7 +68,8 @@ Package.onUse(function(api) {
   ], "client");
 
   api.export([
-    'Ziadanky'
+    'Ziadanky',
+    'Vydajky'
   ]);
 });
 

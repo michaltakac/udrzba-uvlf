@@ -57,7 +57,7 @@ Schemas.Sklad = new SimpleSchema({
     label: 'Poznámka',
     optional: true
   },
-  počet: {
+  pocet: {
     type: Number,
     label: 'Počet *'
   },

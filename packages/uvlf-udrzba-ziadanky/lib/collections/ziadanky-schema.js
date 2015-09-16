@@ -187,15 +187,6 @@ Schemas.Ziadanky = new SimpleSchema({
     label: 'Termín ukončenia prác',
     optional: true
   },
-  supisDodavok: {
-    type: Array,
-    label: 'Súpis dodávok',
-    optional: true,
-  },
-  'supisDodavok.$': {
-    type: String,
-    optional: true,
-  },
   priorita: {
     type: String,
     label: 'Priorita',

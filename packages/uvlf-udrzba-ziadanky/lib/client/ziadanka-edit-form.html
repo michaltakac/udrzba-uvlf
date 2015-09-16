@@ -45,23 +45,39 @@
       <div class="col-md-12">
         <!-- Súpis dodávok -->
         <div class="form-group">
-          <label for="supisDodavok">Výdaj zo skladu:</label>
-          <select name="supisDodavok" id="supisDodavok" class="form-control {{#if miestoError}}has-error{{/if}}" multiple="multiple"></select>
-          {{#if dodavky}}
+          <label for="zasoby">Výdaj zo skladu:</label>
+          {{#if Template.subscriptionsReady}}
+          {{#with skladoveZasoby}}
+          {{> zasoby_select}}
+          {{/with}}
+          {{else}}
+            {{> loading}}
+          {{/if}}
+          <div>
+            <button class="btn btn-success" data-event="add-row"><i class="fa fa-plus-square"></i> Pridaj položku</button>
+          </div>
+
+          {{#if vydajka}}
           <table class="table table-striped table-bordered table-condensed">
             <thead>
               <tr>
-                <th>Nazov</th>
-                <th>Pocet</th>
-                <th></th>
+                <th style="width: 20px;"></th>
+                <th>Názov</th>
+                <th>Kategória</th>
+                <th style="width: 50px;">Počet</th>
+                <th style="width: 20px;">Jednotka</th>
+                <th style="width: 20px;"></th>
               </tr>
             </thead>
             <tbody>
-              {{#each dodavky}}
+              {{#each vydajka}}
               <tr>
-                <td>{{this}}</td>
-                <td>125</td>
-                <td><button class="btn btn-danger" data-event="delete-dodavka">X</button></td>
+                <td>{{index}}.</td>
+                <td>{{nazovPolozky}}</td>
+                <td>{{kategoria}}</td>
+                <td>{{pocet}}</td>
+                <td>{{jednotka}}</td>
+                <td><button class="btn btn-danger" data-id="{{_id}}" data-event="delete-polozka">X</button></td>
               </tr>
               {{/each}}
             </tbody>
@@ -94,4 +110,13 @@
     </div>
   </form>
   <hr>
+</template>
+
+<template name="zasoby_select">
+  <select type="text" name="zasoby" id="zasoby" class="form-control">
+  <option value="" selected disabled>Vyberte položku zo skladu a kliknite na "Pridaj položku"</option>
+  {{#each this}}
+    <option value="{{_id}}">{{nazovPolozky}}</option>
+  {{/each}}
+  </select>
 </template>

@@ -22,7 +22,7 @@ AdminConfig = {
         { label: 'Kategória', name: 'kategoria' },
         { label: 'Názov položky', name: 'nazovPolozky' },
         { label: 'Typ', name: 'typ' },
-        { label: 'Počet', name: 'počet' },
+        { label: 'Počet', name: 'pocet' },
         { label: 'Jednotka', name: 'jednotka' },
       ]
     }
