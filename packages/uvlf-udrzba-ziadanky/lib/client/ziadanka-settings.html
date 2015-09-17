@@ -9,12 +9,12 @@
       <!-- Termín začatia prác -->
       <div class="form-group">
         <label for="zacatiePrac">Termín začatia prác:</label>
-        <input type="text" name="zacatiePrac" id="zacatiePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}">
+        <input type="text" name="zacatiePrac" id="zacatiePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" disabled="{{#if this.vybavena}}true{{/if}}">
       </div>
       <!-- Termín ukončenia prác -->
       <div class="form-group">
         <label for="ukonceniePrac">Termín ukončenia prác:</label>
-        <input type="text" name="ukonceniePrac" id="ukonceniePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}">
+        <input type="text" name="ukonceniePrac" id="ukonceniePrac" data-type="datepicker" class="form-control {{#if miestoError}}has-error{{/if}}" disabled="{{#if this.vybavena}}true{{/if}}">
       </div>
     </div>
 
@@ -22,7 +22,7 @@
       <!-- Priorita -->
       <div class="form-group">
         <label for="priorita">Priorita:</label>
-        <select type="text" name="priorita" id="priorita" class="form-control">
+        <select type="text" name="priorita" id="priorita" class="form-control" disabled="{{#if this.vybavena}}true{{/if}}">
         {{#each options}}
           <option value="{{value}}" selected="{{#if equals value ziadanka.priorita}}true{{/if}}">{{text}}</option>
         {{/each}}

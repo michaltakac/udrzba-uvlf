@@ -19,11 +19,12 @@ AdminConfig = {
     },
     Sklad: {
       tableColumns: [
-        { label: 'Kategória', name: 'kategoria' },
+        { label: 'Sklad', name: 'kategoria' },
         { label: 'Názov položky', name: 'nazovPolozky' },
         { label: 'Typ', name: 'typ' },
         { label: 'Počet', name: 'pocet' },
         { label: 'Jednotka', name: 'jednotka' },
+        { label: 'Správca', name: 'spravcaSkladu' }
       ]
     }
   },

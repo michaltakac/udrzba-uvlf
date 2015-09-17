@@ -52,6 +52,11 @@ Schemas.Sklad = new SimpleSchema({
     type: String,
     label: 'Názov položky *'
   },
+  spravcaSkladu: {
+    type: String,
+    label: 'Správca skladu',
+    optional: true
+  },
   poznamka: {
     type: String,
     label: 'Poznámka',

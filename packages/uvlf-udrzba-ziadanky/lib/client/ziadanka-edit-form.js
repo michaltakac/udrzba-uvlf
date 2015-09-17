@@ -29,6 +29,27 @@ Template['ziadanka_edit_form'].onRendered(function() {
         supisDodavok: $('#supisDodavok').val()
       };
 
+      var vydajka = Vydajky.find().fetch();
+      for (var i = 0; i < vydajka.length; i++) {
+        console.log(vydajka[i]);
+        var polozkaId = vydajka[i].polozkaId;
+        var pocet = vydajka[i].pocet;
+        var pocetNaSklade = Sklad.findOne(polozkaId).pocet;
+
+        var rozdiel = pocetNaSklade - pocet;
+        if (rozdiel < 0) {
+          Bert.alert('Na sklade nie je dostatočné množstvo.', 'danger', 'growl-top-right');
+        } else {
+          Sklad.update(polozkaId, {
+            $set: { pocet: rozdiel }
+          }, function(error) {
+            if (error) {
+              throw new Meteor.Error('401', 'Nastala chyba pri zapisovaní hodnoty!');
+            }
+          });
+        }
+      }
+
       Ziadanky.update(ziadankaId, {
         $set: editedInputs
       }, function(error) {
@@ -51,6 +72,7 @@ Template['ziadanka_edit_form'].helpers({
   },
   vydajka: function() {
     return Vydajky.find().fetch().map(function(i, poradie) {
+      var pocetSklad = Sklad.findOne(i.polozkaId).pocet;
       return {
         _id: i._id,
         polozkaId: i.polozkaId,
@@ -58,13 +80,39 @@ Template['ziadanka_edit_form'].helpers({
         kategoria: i.kategoria,
         nazovPolozky: i.nazovPolozky,
         jednotka: i.jednotka,
-        pocet: i.pocet
+        pocet: i.pocet,
+        pocetNaSklade: pocetSklad,
+        rozdiel: pocetSklad-i.pocet
       }
     });
   }
 });
 
 Template['ziadanka_edit_form'].events({
+  'change [data-item="pocet"]': function(e) {
+    e.preventDefault();
+
+    var vydajkaId = $(e.target).attr('data-id');
+    var polozkaId = Vydajky.findOne(vydajkaId).polozkaId;
+    var pocet = $(e.currentTarget).val();
+    var pocetSklad = Sklad.findOne(polozkaId).pocet;
+
+    var rozdiel = pocetSklad-pocet;
+
+    if (rozdiel < 0) {
+      Bert.alert('Na sklade nie je dostatočné množstvo.', 'danger', 'growl-top-right');
+    } else {
+      Vydajky.update(vydajkaId, {
+        $set: { pocet: pocet }
+      }, function(error) {
+        if (error) {
+          Bert.alert('Vyskytla sa chyba, nepodarilo sa odstrániť položku.', 'danger', 'growl-top-right');
+        } else {
+          Bert.alert('Aktualizované.', 'success', 'growl-top-right');
+        }
+      });
+    }
+  },
   'click [data-event="delete-polozka"]': function(e) {
     e.preventDefault();
     var vydajkaId = $(e.target).attr('data-id');
