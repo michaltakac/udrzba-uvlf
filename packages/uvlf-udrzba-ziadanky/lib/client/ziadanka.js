@@ -24,7 +24,8 @@ Template.ziadanka.helpers({
         kategoria: i.kategoria,
         nazovPolozky: i.nazovPolozky,
         jednotka: i.jednotka,
-        pocet: i.pocet
+        pocet: i.pocet,
+        cena: i.cena
       }
     });
   }

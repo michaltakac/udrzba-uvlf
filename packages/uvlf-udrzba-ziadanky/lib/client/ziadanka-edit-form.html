@@ -62,12 +62,13 @@
             <thead>
               <tr>
                 <th style="width: 20px;"></th>
-                <th>Názov</th>
-                <th>Kategória</th>
+                <th style="width: 250px;">Kategória</th>
+                <th>Položka</th>
                 <th style="width: 70px;">Množstvo na sklade</th>
                 <th style="width: 70px;">Množstvo</th>
                 <th style="width: 50px;">Rozdiel</th>
                 <th style="width: 20px;">Jednotka</th>
+                <th style="width: 50px;">Cena</th>
                 <th style="width: 50px;"></th>
                 <th style="width: 20px;"></th>
               </tr>
@@ -76,12 +77,13 @@
               {{#each vydajka}}
               <tr>
                 <td>{{index}}.</td>
-                <td>{{nazovPolozky}}</td>
                 <td>{{kategoria}}</td>
+                <td>{{nazovPolozky}}</td>
                 <td>{{pocetNaSklade}}</td>
                 <td><input type="text" id="polozka-{{index}}" data-id="{{_id}}" data-item="pocet" value="{{pocet}}" style="width: 70px;" disabled="{{#if ziadanka.vybavena}}true{{/if}}"></td>
                 <td>{{rozdiel}}</td>
                 <td>{{jednotka}}</td>
+                <td>{{cena}} €</td>
                 <td><button class="btn btn-warning" data-id="{{_id}}" data-event="create-nakup">Nákup</button></td>
                 <td><button class="btn btn-danger" data-id="{{_id}}" data-event="delete-polozka">X</button></td>
               </tr>

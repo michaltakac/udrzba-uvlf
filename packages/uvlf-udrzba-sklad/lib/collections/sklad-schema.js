@@ -71,7 +71,7 @@ Schemas.Sklad = new SimpleSchema({
     label: 'Jednotka *'
   },
   sadzbaDph: {
-    type: String,
+    type: Number,
     label: 'Cena bez DPH',
     optional: true
   },

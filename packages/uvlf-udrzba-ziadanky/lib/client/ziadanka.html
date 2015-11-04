@@ -90,20 +90,22 @@
           <thead>
             <tr>
               <th style="width: 20px;"></th>
-              <th>Názov</th>
               <th>Sklad</th>
+              <th>Názov</th>
               <th style="width: 50px;">Počet</th>
               <th style="width: 20px;">Jednotka</th>
+              <th>Cena bez DPH</th>
             </tr>
           </thead>
           <tbody>
             {{#each vydajka}}
             <tr>
               <td>{{index}}.</td>
-              <td>{{nazovPolozky}}</td>
               <td>{{kategoria}}</td>
+              <td>{{nazovPolozky}}</td>
               <td>{{pocet}}</td>
               <td>{{jednotka}}</td>
+              <td>{{cena}} €</td>
             </tr>
             {{/each}}
           </tbody>

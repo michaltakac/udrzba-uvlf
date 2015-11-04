@@ -14,8 +14,9 @@ Template['ziadanka_edit_form'].onCreated(function() {
 Template['ziadanka_edit_form'].onRendered(function() {
   $('#ziadanka-edit').validate({
     ignore: null,
-    submitHandler: function() {
-      var array = []
+    submitHandler: function(form, event) {
+      event.preventDefault();
+      var array = [];
       var pracovnici = $('#pridelenyPracovnik').val();
       if(pracovnici.length > 0) {
         array = pracovnici.split(',');
@@ -37,8 +38,19 @@ Template['ziadanka_edit_form'].onRendered(function() {
         var pocetNaSklade = Sklad.findOne(polozkaId).pocet;
 
         var rozdiel = pocetNaSklade - pocet;
+
+        console.log(pocet);
+        console.log(rozdiel);
+        console.log(Sklad.findOne(polozkaId));
+
+        var sucasnyPocet = parseInt($("#polozka-"+ (i+1)).val(), 10);
+        console.log(sucasnyPocet);
+        var sucet = rozdiel+sucasnyPocet;
+
         if (rozdiel < 0) {
           Bert.alert('Na sklade nie je dostatočné množstvo.', 'danger', 'growl-top-right');
+        } else if (rozdiel+sucasnyPocet == pocetNaSklade) {
+          Bert.alert('Aktualizované (žiadne zmeny).', 'success', 'growl-top-right');
         } else {
           Sklad.update(polozkaId, {
             $set: { pocet: rozdiel }
@@ -72,7 +84,9 @@ Template['ziadanka_edit_form'].helpers({
   },
   vydajka: function() {
     return Vydajky.find().fetch().map(function(i, poradie) {
-      var pocetSklad = Sklad.findOne(i.polozkaId).pocet;
+      var sklad = Sklad.findOne(i.polozkaId);
+      var pocetSklad = sklad.pocet;
+      var cena = i.pocet * sklad.sadzbaDph;
       return {
         _id: i._id,
         polozkaId: i.polozkaId,
@@ -82,7 +96,8 @@ Template['ziadanka_edit_form'].helpers({
         jednotka: i.jednotka,
         pocet: i.pocet,
         pocetNaSklade: pocetSklad,
-        rozdiel: pocetSklad-i.pocet
+        rozdiel: pocetSklad-i.pocet,
+        cena: cena
       }
     });
   }
@@ -90,20 +105,23 @@ Template['ziadanka_edit_form'].helpers({
 
 Template['ziadanka_edit_form'].events({
   'change [data-item="pocet"]': function(e) {
-    e.preventDefault();
-
     var vydajkaId = $(e.target).attr('data-id');
-    var polozkaId = Vydajky.findOne(vydajkaId).polozkaId;
+    var vydajka = Vydajky.findOne(vydajkaId);
+    var polozkaId = vydajka.polozkaId;
     var pocet = $(e.currentTarget).val();
     var pocetSklad = Sklad.findOne(polozkaId).pocet;
 
     var rozdiel = pocetSklad-pocet;
+    var cena = pocet * Sklad.findOne(polozkaId).sadzbaDph;
 
     if (rozdiel < 0) {
       Bert.alert('Na sklade nie je dostatočné množstvo.', 'danger', 'growl-top-right');
     } else {
       Vydajky.update(vydajkaId, {
-        $set: { pocet: pocet }
+        $set: { 
+          pocet: pocet,
+          cena: cena 
+        }
       }, function(error) {
         if (error) {
           Bert.alert('Vyskytla sa chyba, nepodarilo sa odstrániť položku.', 'danger', 'growl-top-right');
@@ -124,6 +142,7 @@ Template['ziadanka_edit_form'].events({
   },
   'click [data-event="add-row"]': function(e) {
     e.preventDefault();
+    e.stopPropagation();
     var polozkaId = $('#zasoby').val();
     var skladPolozka = Sklad.findOne(polozkaId);
 
@@ -133,7 +152,7 @@ Template['ziadanka_edit_form'].events({
       nazovPolozky: skladPolozka.nazovPolozky,
       kategoria: skladPolozka.kategoria,
       typ: skladPolozka.typ,
-      pocet: skladPolozka.pocet,
+      pocet: 0,
       jednotka: skladPolozka.jednotka
     };
 
@@ -145,6 +164,7 @@ Template['ziadanka_edit_form'].events({
   },
   'click #vybavena': function(e) {
     e.preventDefault();
+    e.stopPropagation();
     var ziadankaId = FlowRouter.getParam('_id');
     var status = $(e.currentTarget).is(":checked");
     Session.set("statevalue", status);

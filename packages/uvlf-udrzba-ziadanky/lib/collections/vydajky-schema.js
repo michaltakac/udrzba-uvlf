@@ -25,6 +25,11 @@ Schemas.Vydajky = new SimpleSchema({
     label: 'Nákup',
     optional: true
   },
+  cena: {
+    type: Number,
+    label: 'Cena bez DPH',
+    optional: true
+  },
   createdAt: {
     type: Date,
     label: 'Pridané',
