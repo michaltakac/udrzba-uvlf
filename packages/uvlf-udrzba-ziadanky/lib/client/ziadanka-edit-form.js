@@ -32,19 +32,13 @@ Template['ziadanka_edit_form'].onRendered(function() {
 
       var vydajka = Vydajky.find().fetch();
       for (var i = 0; i < vydajka.length; i++) {
-        console.log(vydajka[i]);
         var polozkaId = vydajka[i].polozkaId;
         var pocet = vydajka[i].pocet;
         var pocetNaSklade = Sklad.findOne(polozkaId).pocet;
 
         var rozdiel = pocetNaSklade - pocet;
 
-        console.log(pocet);
-        console.log(rozdiel);
-        console.log(Sklad.findOne(polozkaId));
-
         var sucasnyPocet = parseInt($("#polozka-"+ (i+1)).val(), 10);
-        console.log(sucasnyPocet);
         var sucet = rozdiel+sucasnyPocet;
 
         if (rozdiel < 0) {
