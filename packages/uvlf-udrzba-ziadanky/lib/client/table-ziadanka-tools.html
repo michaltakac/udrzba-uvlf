@@ -1,6 +1,8 @@
 <template name="tableZiadankaTools">
-  <a href="/ziadanky/{{this._id}}/edit"><i class="fa fa-custom fa-pencil-square-o edit" title="Upraviť"></i></a>
-  <a href="/ziadanky/{{this._id}}" target="_blank"><i class="fa fa-custom fa-print nahlad" title="Náhľad tlače"></i></a>
-  <a href="/ziadanky/{{this._id}}/pdf" target="_blank"><i class="fa fa-custom fa-file-pdf-o pdf" title="Exportovať do PDF"></i></a>
-  <a href="#" data-action="delete-ziadanka"><i class="fa fa-custom fa-times delete" title="Zmazať žiadanku"></i></a>
+  {{#if isInRole 'admin'}}
+  <a href="/ziadanky/{{this._id}}/edit" class="btn btn-warning"><i class="fa fa-custom fa-pencil-square-o edit"></i> Editovať</a>
+  {{else}}
+  <a href="/ziadanky/{{this._id}}" target="_blank" class="btn btn-primary"><i class="fa fa-custom fa-print nahlad"></i> Náhľad tlače</a>
+  {{/if}}
+  <a href="#" data-action="delete-ziadanka" class="btn btn-danger"><i class="fa fa-custom fa-times delete"></i> Archivovať</a>
 </template>

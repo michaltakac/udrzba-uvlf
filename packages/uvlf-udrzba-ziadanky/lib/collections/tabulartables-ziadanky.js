@@ -13,9 +13,10 @@ TabularTables.Ziadanky = new Tabular.Table({
       }
     },
     {data: "cislo", title: "Číslo žiadanky", class: "col-md-2"},
-    {data: "ziadatelInfo_priezvisko", title: "Priezvisko", class: "col-md-2"},
+    {data: "ziadatelInfo_priezvisko", title: "Žiadateľ", class: "col-md-2"},
+    {data: "miesto", title: "Miesto"},
     {data: "predmet", title: "Predmet"},
-    {data: "vybavena", title: "Status", class: "col-md-1 status-column",
+    {data: "vybavena", title: "Status", class: "status-column", style: "width: 25px;",
       tmpl: Meteor.isClient && Template.statusZiadanka
     },
     {

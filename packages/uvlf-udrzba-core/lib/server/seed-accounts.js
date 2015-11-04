@@ -32,6 +32,22 @@ Meteor.startup(function() {
       email: 'tatiana.takacova@uvlf.sk',
       password: 'password'
     });
+    var third = Accounts.createUser({
+      profile: {
+        utvar: 'Útvar kvestora',
+        pracovisko: 'Oddelenie prevádzky a investícií',
+        referat: 'Pracovisko správy a údržby',
+        titulPred: '',
+        meno: 'Vladimír',
+        priezvisko: 'Takáč',
+        titulZa: '',
+        telefon: '+421917171065',
+        klapka: '1197',
+        updatedAt: new Date()
+      },
+      email: 'vladimir.takac@uvlf.sk',
+      password: 'levicek6'
+    });
     Roles.setUserRoles(first, 'user', 'default-group');
     Roles.setUserRoles(second, 'user', 'default-group');
   }

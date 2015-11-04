@@ -32,7 +32,7 @@ AccountsTemplates.configure({
 });
 
 //Routes
-//AccountsTemplates.configureRoute('enrollAccount'); // for creating passwords after logging first time
+AccountsTemplates.configureRoute('enrollAccount'); // for creating passwords after logging first time
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
 AccountsTemplates.configureRoute('resetPwd');
