@@ -32,9 +32,16 @@ Template.ziadankaSettings.onRendered(function() {
     labelField: 'name',
     searchField: ['name', 'email'],
     options: [
-      {_id: 'sdgsdfgsdfm7', name: 'Prvy Pracovnik'},
-      {_id: 'sdfg2sd4gsd4', name: 'Druhy Pracovnik'},
-      {_id: 'sdbnnf117ve7', name: 'Treti Pracovnik'}
+      {_id: 'pracovnik_0001', name: 'p. Dranga'},
+      {_id: 'pracovnik_0002', name: 'p. Dancák'},
+      {_id: 'pracovnik_0003', name: 'p. Fusek'},
+      {_id: 'pracovnik_0004', name: 'p. Lazur'},
+      {_id: 'pracovnik_0005', name: 'p. Vendrák'},
+      {_id: 'pracovnik_0006', name: 'p. Klik'},
+      {_id: 'skupina_0001', name: 'Nádvorní'},
+      {_id: 'skupina_0002', name: 'Ing. Chriaštelová'},
+      {_id: 'organizacia_0001', name: 'Org. 1'},
+      {_id: 'organizacia_0002', name: 'Org. 2'},
     ],
     render: {
       item: function(item, escape) {

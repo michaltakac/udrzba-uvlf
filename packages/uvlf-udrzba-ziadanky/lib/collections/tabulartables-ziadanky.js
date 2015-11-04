@@ -12,11 +12,11 @@ TabularTables.Ziadanky = new Tabular.Table({
         return moment(val).format("DD.MM.YYYY");
       }
     },
-    {data: "cislo", title: "Číslo žiadanky", class: "col-md-2"},
-    {data: "ziadatelInfo_priezvisko", title: "Žiadateľ", class: "col-md-2"},
+    {data: "cislo", title: "ID", class: "table-cislo-ziadanky"},
+    {data: "ziadatelInfo_priezvisko", title: "Žiadateľ", class: "table-ziadatel"},
     {data: "miesto", title: "Miesto"},
     {data: "predmet", title: "Predmet"},
-    {data: "vybavena", title: "Status", class: "status-column", style: "width: 25px;",
+    {data: "vybavena", title: "", class: "status-column", style: "width: 25px;",
       tmpl: Meteor.isClient && Template.statusZiadanka
     },
     {

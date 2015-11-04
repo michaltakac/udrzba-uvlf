@@ -1,8 +1,8 @@
 <template name="tableZiadankaTools">
   {{#if isInRole 'admin'}}
-  <a href="/ziadanky/{{this._id}}/edit" class="btn btn-warning"><i class="fa fa-custom fa-pencil-square-o edit"></i> Editovať</a>
+  <a href="/ziadanky/{{this._id}}/edit" class="btn btn-warning" title="Editovať"><i class="fa fa-custom fa-pencil-square-o edit"></i></a>
+  <a href="#" data-action="delete-ziadanka" class="btn btn-danger" title="Archivovať"><i class="fa fa-custom fa-times delete"></i></a>
   {{else}}
-  <a href="/ziadanky/{{this._id}}" target="_blank" class="btn btn-primary"><i class="fa fa-custom fa-print nahlad"></i> Náhľad tlače</a>
+  <a href="/ziadanky/{{this._id}}" target="_blank" class="btn btn-primary" title="Náhľad tlače"><i class="fa fa-custom fa-print nahlad"></i></a>
   {{/if}}
-  <a href="#" data-action="delete-ziadanka" class="btn btn-danger"><i class="fa fa-custom fa-times delete"></i> Archivovať</a>
 </template>
