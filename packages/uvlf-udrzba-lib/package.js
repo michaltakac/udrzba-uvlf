@@ -22,7 +22,7 @@ Package.onUse(function(api) {
     'useraccounts:bootstrap',
     'alanning:roles',
     'aldeed:collection2',
-    'aldeed:autoform',
+    'aldeed:autoform@5.5.0',
     'twbs:bootstrap',
     'themeteorchef:jquery-validation',
     'zimme:active-route',
@@ -50,8 +50,7 @@ Package.onUse(function(api) {
     'rajit:bootstrap3-datepicker',
     'rajit:bootstrap3-datepicker-sk',
     'meteorhacks:picker',
-    'chhib:selectize-bootstrap-3',
-    'typ:accounts-ldap'
+    'chhib:selectize-bootstrap-3'
   ];
 
   api.use(packages);

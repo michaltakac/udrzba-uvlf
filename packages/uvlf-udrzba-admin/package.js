@@ -27,7 +27,7 @@ Package.onUse(function(api) {
     'raix:handlebar-helpers@0.2.4',
     'momentjs:moment@2.10.3',
     'aldeed:tabular@1.2.0',
-    'mfactory:admin-lte'
+    'mfactory:admin-lte@0.0.2'
     ], both);
 
   api.use(['less','session','jquery','templating'],'client');

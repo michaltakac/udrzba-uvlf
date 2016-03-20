@@ -20,7 +20,8 @@ Package.onUse(function(api) {
     'uvlf:udrzba-ziadanky',
     'uvlf:udrzba-nakupy',
     'uvlf:udrzba-sklad',
-    'uvlf:udrzba-generate-pdf'
+    'uvlf:udrzba-generate-pdf',
+    'uvlf:udrzba-activedirectory'
   ], ['client', 'server']);
 
 });
