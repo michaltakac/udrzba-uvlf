@@ -10,7 +10,7 @@ Package.describe({
 
 Package.onUse(function(api) {
 
-  api.versionsFrom('1.1.0.3');
+  api.versionsFrom('1.2.1');
 
   var packages = [
     'meteor-platform',
@@ -19,38 +19,39 @@ Package.onUse(function(api) {
     'handlebars',
     'reactive-var',
     'accounts-password',
-    'useraccounts:bootstrap@1.12.3',
+    'useraccounts:bootstrap',
     'alanning:roles',
-    'aldeed:collection2@2.5.0',
-    'aldeed:autoform@5.5.0',
-    'twbs:bootstrap@3.3.5',
-    'themeteorchef:jquery-validation@1.14.0',
-    'zimme:active-route@2.3.2',
-    'arillo:flow-router-helpers@0.4.5',
-    'kadira:flow-router@2.6.0',
-    'kadira:blaze-layout@2.1.0',
-    'themeteorchef:bert@1.1.0',
-    'meteorhacks:subs-manager@1.6.2',
+    'aldeed:collection2',
+    'aldeed:autoform',
+    'twbs:bootstrap',
+    'themeteorchef:jquery-validation',
+    'zimme:active-route',
+    'arillo:flow-router-helpers',
+    'kadira:flow-router',
+    'kadira:blaze-layout',
+    'themeteorchef:bert',
+    'meteorhacks:subs-manager',
     'cmather:handlebars-server@0.2.0',
-    'dburles:collection-helpers@1.0.3',
-    'reywood:publish-composite@1.3.3',
-    'momentjs:moment@2.10.6',
-    'underscorestring:underscore.string@3.2.2',
-    'matb33:collection-hooks@0.7.5',
-    'dburles:factory@0.3.10',
+    'dburles:collection-helpers',
+    'reywood:publish-composite',
+    'momentjs:moment',
+    'underscorestring:underscore.string',
+    'matb33:collection-hooks',
+    'dburles:factory',
     'anti:fake',
     'cunneen:mailgun',
-    'useraccounts:flow-routing@1.12.3',
-    'yasinuslu:blaze-meta@0.3.3',
-    'fortawesome:fontawesome@4.4.0',
-    'natestrauser:select2@4.0.0',
+    'useraccounts:flow-routing',
+    'yasinuslu:blaze-meta',
+    'fortawesome:fontawesome',
+    'natestrauser:select2',
     'aldeed:autoform-select2',
     'numeral:numeral',
-    'aldeed:tabular@1.4.0',
+    'aldeed:tabular@1.4.2',
     'rajit:bootstrap3-datepicker',
     'rajit:bootstrap3-datepicker-sk',
-    'meteorhacks:picker@1.0.3',
-    'chhib:selectize-bootstrap-3'
+    'meteorhacks:picker',
+    'chhib:selectize-bootstrap-3',
+    'typ:accounts-ldap'
   ];
 
   api.use(packages);
@@ -91,6 +92,7 @@ Package.onUse(function(api) {
     'select2',
     'Roles',
     'AutoForm',
-    'Bert'
+    'Bert',
+    'LDAP_DEFAULTS'
   ]);
 });

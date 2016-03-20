@@ -7,7 +7,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.1.0.3');
+  api.versionsFrom('1.2.1');
 
   both = ['client','server'];
 
@@ -27,7 +27,7 @@ Package.onUse(function(api) {
     'raix:handlebar-helpers@0.2.4',
     'momentjs:moment@2.10.3',
     'aldeed:tabular@1.2.0',
-    'mfactory:admin-lte@0.0.2'
+    'mfactory:admin-lte'
     ], both);
 
   api.use(['less','session','jquery','templating'],'client');
