@@ -14,6 +14,7 @@ TabularTables.Ziadanky = new Tabular.Table({
     },
     {data: "cislo", title: "ID", class: "table-cislo-ziadanky"},
     {data: "ziadatelInfo_priezvisko", title: "Žiadateľ", class: "table-ziadatel"},
+    {data: "pridelenyPracovnik", title: "Pracovnik"},
     {data: "miesto", title: "Miesto"},
     {data: "predmet", title: "Predmet"},
     {data: "vybavena", title: "", class: "status-column", style: "width: 25px;",

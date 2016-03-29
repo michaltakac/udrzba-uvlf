@@ -129,7 +129,6 @@ url@1.0.5
 useraccounts:bootstrap@1.12.3
 useraccounts:core@1.12.3
 useraccounts:flow-routing@1.12.3
-uvlf:udrzba-activedirectory@1.0.0
 uvlf:udrzba-admin@1.0.0
 uvlf:udrzba-app@0.0.1
 uvlf:udrzba-core@1.0.0

@@ -72,6 +72,7 @@ Schemas.Sklad = new SimpleSchema({
   },
   sadzbaDph: {
     type: Number,
+    decimal: true,
     label: 'Cena bez DPH',
     optional: true
   },

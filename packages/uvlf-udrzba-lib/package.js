@@ -91,7 +91,6 @@ Package.onUse(function(api) {
     'select2',
     'Roles',
     'AutoForm',
-    'Bert',
-    'LDAP_DEFAULTS'
+    'Bert'
   ]);
 });
